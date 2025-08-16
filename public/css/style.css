@@ -1,0 +1,439 @@
+@import url(https://db.onlinewebfonts.com/c/9367e6ff5b318b0bfeb1bbdfe9c3e075?family=Jane+Regular+W00+Regular);
+@import url(https://db.onlinewebfonts.com/c/29ddb4605533a38e086b48fa105e0d12?family=Nohemi);
+@import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ranchers&display=swap);
+
+
+:root {
+  --color-white: #ffffff;
+  --color-white-soft: #fbfbfb;
+  --color-white-gray: #fafafa;
+  --color-dark-green-gray: #142626;
+  --color-white-light: #fdfdfd;
+  --color-dark-green: #14261c;
+  --color-light-green: #06752e;
+}
+
+
+*{
+    font-family: 'Jane Regular W00 Regular',sans-serif;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--color-white-soft);
+}
+header {
+    min-height: 130px;
+    width: 100%;
+    font: 20px regular;
+    background: var(--color-dark-green);
+    padding: 0  255px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo img{ 
+   height: 60px;        
+    width: auto;      
+    display: block;   
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items:center;
+    gap:20px;
+}
+
+.nav-links a{
+    color: var(--color-white);
+    font-size: 20px;
+    padding: 20px 15px;
+    display:flex ;
+    justify-content: space-between;  
+}
+
+.category {
+    position: relative;
+    height: 60px;
+    transition: .2s;
+}
+
+.category span{
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+.category:hover span{
+    opacity: 1;
+    transform: rotate(0deg);
+    transition: .15s ease-in;
+}
+
+/* --- LÍNEA ANIMADA PARA TODOS LOS ENLACES DEL MENÚ --- */
+
+/* 1. Preparamos todos los enlaces para poder posicionar la línea dentro de ellos */
+.nav-links > li > a,
+.contact-link {
+    position: relative;
+}
+
+/* 2. Creamos la línea (::after) para todos esos enlaces */
+.nav-links > li > a::after,
+.contact-link::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    background-color: var(--color-white);
+    transform: scaleX(0); /* Estado inicial: invisible */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 3. Posicionamos la línea para los enlaces de la navegación principal (Categorías, Cupones, etc.) */
+.nav-links > li > a::after {
+    width: calc(100% - 30px); /* Descontamos el padding lateral del enlace */
+    bottom: 15px; /* La subimos para que no quede tan abajo */
+    left: 15px;
+    transform-origin: center; /* La animación sale del centro */
+}
+
+/* 4. Posicionamos la línea para el enlace de "CONTACTANOS" */
+.contact-link::after {
+    width: 100%; /* Ocupa todo el ancho ya que no tiene padding */
+    bottom: -2px; /* La ponemos un poquito por debajo del texto */
+    left: 0;
+    transform-origin: left; 
+}
+
+
+.nav-links > li:hover > a::after,
+.contact-link:hover::after {
+    transform: scaleX(1); 
+}
+
+/* --- ESTILOS DEL MENÚ DESPLEGABLE --- */
+.drop-down {
+    position: absolute;
+    top: 80%; 
+    left: 0;
+    width: max-content; 
+    background-color: var(--color-dark-green);
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.category:hover .drop-down {
+    opacity: 1;
+    visibility: visible;
+}
+
+.drop-down li a {
+    padding: 10px 20px;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+}
+
+.drop-down li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- ESTILOS DE LA PARTE DERECHA DEL HEADER --- */
+.header-right{ 
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-link {
+    color: var(--color-white);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.login-button {
+    background-color: var(--color-white);
+    color:var(--color-dark-green);
+    padding: 15px 80px;
+    border-radius: 50px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.login-button:hover{
+    background-color: var(--color-light-green);
+    color: var(--color-white);
+}
+
+
+/****************************************************************************************/
+
+/* --- SLIDER IMAGENES PROMOCIONALES  --- */
+
+/* Contenedor general de la sección para darle espacio vertical */
+.hero-section {
+    padding-top: 50px; /* Ajusta este valor para dar espacio debajo del header */
+    padding-bottom: 50px;
+    background-color: #fff; /* O el color de fondo de tu página */
+}
+
+/* El contenedor que centrará el slider en la página */
+.hero-container {
+    max-width: 1440px; /* Ancho máximo del slider, como en el diseño */
+    margin: 0 auto;    /* ¡La clave para centrarlo horizontalmente! */
+    padding: 0 30px;   /* Espacio a los lados en pantallas más pequeñas */
+}
+
+/* El 'marco' del slider. Aquí aplicamos el borde redondeado y ocultamos el resto de las imágenes */
+.hero-slider {
+    width: 100%;
+    overflow: hidden; /* ¡Muy importante! Oculta las imágenes que no se están mostrando */
+    border-radius: 50px; /* Las esquinas redondeadas que se ven en el diseño */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Una sombra sutil para darle profundidad */
+}
+
+/* La lista <ul> que se moverá. Es el corazón de la animación */
+.hero-slider ul {
+    /* CORRECCIÓN: El selector correcto es 'ul', no '.slide u' */
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Quita los puntos de la lista */
+    width: 300%; /* Ancho total (100% por cada imagen, si tienes 3 imágenes) */
+    
+    /* La animación que mueve el 'margin-left' de la lista */
+    animation: slide 15s infinite ease-in-out;
+}
+
+/* Cada elemento <li> de la lista */
+.hero-slider li {
+    width: 100%; /* Cada slide ocupa el 100% del ancho del 'hero-slider' */
+}
+
+/* Las imágenes dentro del slider */
+.hero-slider img {
+    width: 100%; /* Asegura que la imagen ocupe todo el espacio de su 'li' */
+    display: block; /* Evita un pequeño espacio fantasma debajo de la imagen */
+}
+
+
+/* --- La animación que hace la magia --- */
+@keyframes slide {
+    /* (0% a 30%) La animación se queda en la primera imagen */
+    0% { margin-left: 0; }
+    30% { margin-left: 0; }
+
+    /* (33% a 63%) Se mueve y se queda en la segunda imagen */
+    33% { margin-left: -100%; }
+    63% { margin-left: -100%; }
+
+    /* (66% a 97%) Se mueve y se queda en la tercera imagen */
+    66% { margin-left: -200%; }
+    97% { margin-left: -200%; }
+    
+    /* (100%) Vuelve al inicio de forma instantánea para el bucle */
+    100% { margin-left: 0; }
+}
+/****************************************************************************************
+/
+
+/* --- SECTION CATEGORIAS  --- */
+
+
+
+
+/****************************************************************************************
+/
+
+
+/* Estilos de la página principal de cupones */
+.coupons-main {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.page-title {
+    z-index: -1000;
+    font-family: 'Ranchers';
+    font-size: 100PX;
+    font-weight: bold;
+    color: #0C2B15; /* Color de la línea de la primera imagen */
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.page-title::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #0C2B15;
+    margin-top: 5px;
+}
+
+.coupons-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.coupon-card {
+    text-decoration: none;
+    color: inherit;
+    width: 250px;
+    /*background-color: #fff;*/
+    border-radius: 10px;
+    overflow: hidden;
+    /*box-shadow: 0 4px 10px rgba(0,0,0,0.1);*/
+    transition: transform 0.3s ease;
+}
+
+.coupon-card:hover {
+    transform: translateY(-10px);
+}
+
+.coupon-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+
+
+.coupon-info {
+    padding: 15px;
+
+    
+}
+
+#burguer{
+    font-size: 19px;
+}
+
+.coupon-info h3 {
+    margin: 0 0 5px;
+    font-size: 22px;
+    text-align: left;
+    font-family: 'Nohemi';
+
+}
+
+.coupon-info p {
+    margin: 0 0 10px;
+    font-size: 16px;
+    color: #777;
+    height: 40px; /* Asegura que el texto no se expanda y rompa el diseño */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.ver-mas {
+    color: #2196F3;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Estilos del pop-up  */
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* El truco: cuando el enlace del cupón es el target del URL, se muestra el pop-up */
+.popup-container:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    background-color: #fff;
+    color: #fff;
+    width: 280px;
+    border-radius: 20px;
+    position: relative;
+    padding-top: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.popup-header h2 {
+    font-size: 'Nohemi';
+    font-size: 40px;
+    color: #000000;
+}
+
+.popup-body img {
+    width: 175px;
+    max-width: 175px;
+    margin: 20px 0;
+}
+
+.popup-body p {
+    font-family: 'Jane Regular W00 Regular',sans-serif;
+    text-align: left;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 20px ;
+}
+
+.popup-footer {
+    background-color: #F4C427;
+    color: #000000;
+    padding: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-top: 20px;
+}
+
+.redeem-btn {
+    font-family: 'Jane Regular W00 Regular',sans-serif;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.sold-most {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.sold-most-text {
+    font-size: 1.2em;
+    color: #D20909;
+}
+
+.sold-most p {
+    text-align: left;
+    font-size: 10px;
+    margin: 5px 0 0;
+    color: #555;
+    font-weight: normal;
+}    
