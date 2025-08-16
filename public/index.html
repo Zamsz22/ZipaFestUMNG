@@ -6,6 +6,8 @@
     <title>ZipaFest</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    
     
 </head>
 <body>
@@ -50,30 +52,180 @@
     </section>
 
     <section class="categories-section">
-        <div class="categories-container">
-            <h2 class="section-title">CATEGORIAS</h2>
-            <div class="categories-grid">
+    <div class="categories-container">
+        <h2 class="section-title">CATEGORÍAS</h2>
+        
+        <div class="categories-grid">
 
-                <div class="category-item">
-                    <a href=""><img src="img/Categories/category_1.png" alt="">BURGER FEST</a>
-                </div>
-                <div class="category-item">
-                    <a href=""><img src="img/Categories/category_2.png" alt="">COFFEE MASTER</a>
-                </div>
-                <div class="category-item">
-                    <a href=""><img src="img/Categories/category_3.png" alt="">EMPANADA FEST</a>
-                </div>
-                <div class="category-item">
-                    <a href=""><img src="img/Categories/category_4.png" alt="">TORTA FEST</a>
-                </div>
-                <div class="category-item">
-                    <a href=""><img src="img/Categories/category_5.png" alt="">PIZZA FEST</a>
-                </div> 
+            <!-- Items posicionados con clases específicas -->
+            <div class="category-item item-burger">
+                <a href="#">
+                    <img src="img/Categories/category_1.png" alt="Hamburguesa">
+                    <p>BURGER FEST</p>
+                </a>
+            </div>
+
+            <div class="category-item item-coffee">
+                <a href="#">
+                    <img src="img/Categories/category_2.png" alt="Café helado">
+                    <p>COFFEE MASTER</p>
+                </a>
+            </div>
+
+            <div class="category-item item-torta">
+                <a href="#">
+                    <img src="img/Categories/category_4.png" alt="Cupcake de Ferrero">
+                    <p>TORTA FEST</p>
+                </a>
+            </div>
+
+            <!-- Este item no tiene texto <p> para coincidir con la imagen -->
+            <div class="category-item item-empanada">
+                <a href="#">
+                    <img src="img/Categories/category_3.png" alt="Empanada">
+                    <p>EMPANADA FEST</p>
+                </a>
+            </div>
+
+            
+            <div class="category-center-text" >
+                <h3>SABORES<span class="text-red">SIN</span>LIMITES</h3>
+            </div>
+            <div class="category-item item-pizza">
+                <a href="#">
+                    <img src="img/Categories/category_5.png" alt="Pizza">
+                    <p>PIZZA FEST</p>
+                </a>
+            </div> 
+
+            <img src="img/Categories/sal_decoration.png" alt="" class="cta-deco cta-deco-right">
+
+        </div>
+    </div>
+</section>
+
+<section class="banner-section">
+    <div class="banner-container">
+        <div class="banner">
+            <!-- Imágenes decorativas (no necesitan alt text) -->
+            <img src="img/bannerburger.png" alt="" class="cta-burger cta-burger-left">
+            <img src="img/bannerburger.png" alt="" class="cta-burger cta-burger-right">
+            <img src="img/Bannerbg.png" class="cta-bg cta-bg-left" alt="">
+            <img src="img/Bannerbg.png" class="cta-bg cta-bg-right" alt="">
+
+            <!-- Contenido central de texto -->
+            <div class="banner-content">
+                <h2>REGÍSTRATE Y OBTÉN</h2>
+                <span>CUPONES</span>
+                <a href="../view/cupones.html" class="cta-link">IR AHORA &rarr;</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<section>
+    <div class="animation_gif">
+        <p class="parrafo_gif">Zipaquirá impulsa su turismo gastronómico celebrando festivales que resaltan la riqueza culinaria local, invitando a visitantes a descubrir sabores únicos y tradiciones que fortalecen la identidad cultural del municipio.</p>
+    </div>
+</section>
+</section>
+
+
+<section class="history-section">
+    <div class="history-container">
+
+        <!-- Columna de la Imagen -->
+        <div class="history-image-col">
+            <img src="img/OurHistory/Vegetales.png" alt="" class="cta-table cta-table-vegetales">
+            <img src="img/OurHistory/tabla.png" alt="" class="cta-table cta-table-tabla">
+        </div>
+
+        <!-- Columna del Contenido de Texto -->
+        <div class="history-content-col">
+            <h2 class="history-title">
+                <span>NUESTRA</span>
+                <span>HISTORIA</span>
+            </h2>
+            <p class="history-text">
+                Reunimos los festivales gastronómicos de Zipaquirá en un solo lugar, para que saborees su tradición y cultura en cada evento.
+            </p>
+            <a href="#" class="history-button">Conócenos &rarr;</a>
+        </div>
+        
+    </div>
+</section>
+
+<section class="social-media-section">
+    <div class="container">
+        
+        
+        <div class="social-header">
+            <span class="header-main-text">REDES</span>
+            <span class="header-main-text2">SOCIALES</span>
+            <span class="header-handle">@ZipaFest</span>
+        </div>
+        
+
+        <div class="products-showcase">
+            <div class="product-card card-burger">
+                
+            </div>
+            <div class="product-card card-empanadas">
+                
+            </div>
+            <div class="product-card card-bebida">
+                 <div class="social-icons">
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+        </div>
+                
+            </div>
+        </div>
+       
+    </div>
+</section>
+
+
 
 </main>
+
+
+<footer class="main-footer">
+            <div class="footer-container">
+                <div class="footer-column-left">
+                    <div class="logo-group">
+                        <img src="../public/img/EscudoLogoWhite.png" alt="Escudo Alcaldía de Zipaquirá" class="footer-logo">
+                    </div>
+                    <div class="contact-info">
+                        <h4>Punto de Información Turística</h4>
+                        <p>Calle: 4 N° 11-01</p>
+                        <p>Sábados, domingos y festivos</p>
+                        <p>10:00 a.m. a 2:00 p.m.</p>
+                    </div>
+                    <p class="copyright">Copyright © 2025</p>
+                </div>
+
+                <div class="footer-column-center">
+                    <div class="divider"></div>
+                    <nav class="footer-nav">
+                        <ul class="nav-links-footer">
+                            <li><a href="#">CUPONES</a></li>
+                            <li><a href="#">CATEGORÍAS</a></li>
+                            <li ><a href="#" >SOBRE NOSOTROS</a></li>
+                            <li><a href="#" >CONTÁCTANOS</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="footer-column-right">
+                    <img src="../public/img/zipalogo.png" alt="Logo de Alcaldía de Zipaquirá" class="alcaldia-logo-big">
+                    <div class="divider"></div>
+                    
+                </div>
+            </div>
+</footer> 
     
 </body>
 </html>
