@@ -274,7 +274,7 @@ header {
 
 /* contenedor centrado con ancho fijo similar al screenshot */
 .categories-container{
-    z-index: 40;
+    z-index: 2;
   max-width: 1180px;
   min-height: 900px;
   margin: 0 auto;
@@ -297,9 +297,10 @@ header {
 
 /* ---------- Grid 3x2 con áreas explícitas ---------- */
 .categories-grid{
-     
+    position: relative;
+    isolation: isolate;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3,1fr);
   grid-template-rows: auto auto;
   grid-template-areas:
     "burger coffee torta"
@@ -316,7 +317,6 @@ header {
 .item-torta  { grid-area: torta; }
 .item-empanada  { grid-area: empanada; }
 .item-pizza  { grid-area: pizza; }
-.category-center-text { grid-area: center; }
 
 /* ---------- Estilo base de items (imagen + texto) ---------- */
 .category-item > img {
@@ -343,7 +343,7 @@ header {
 
 /* IMAGEN: base y transiciones (cada item con tamaño fiel a la referencia) */
 .category-item img{
-    z-index: 40;
+  z-index: 40;
   display: block;
   height: auto;
   max-width: 100%;
@@ -383,54 +383,37 @@ header {
 }
 
 .category-item:hover p{
-    z-index: 40;
-transition: .2s ease ;
+ z-index: 40;
+  transition: .2s ease ;
   opacity: 0;
   font-size: 13px;
 }
 
-/* ---------- BLOQUE CENTRAL "SABORES SIN LÍMITES" ---------- */
-.category-center-text{
+/* ---------- BLOQUE CENTRAL "SPLINE" ---------- */
+.category-center-text {
+   /* Lo saca del flujo para que NO afecte al grid */
+  position: absolute;
   
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  pointer-events: none; /* para que el hover se note en items laterales sin afectar centro */
+  /* Lo centra respecto al .categories-container */
+  top: 75%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  z-index: 1; 
+  pointer-events: none;
+  
+
 }
 
-/* h3 con líneas. Ajusta tamaños para que quede como en la imagen */
-.category-center-text h3{
-  font-family: 'Ranchers';
-  font-weight: 400;
-  line-height: 1.2;
-  
-  color: #ffffff;
-  font-size: 60px; /* "SABORES" y "LÍMITES" */
-  letter-spacing: 0.5px;
-}
-
-/* palabra SIN resalta y grande */
-.category-center-text .text-red{
-    font-family: 'Ranchers';
+.category-center-text  > spline-viewer {
   display: block;
-  color: #cf4b44;
-  font-size: 86px;
-  line-height: 0.78;
-  font-weight: 900;
-}
+  pointer-events: none; 
 
-/* si el usuario pasa el ratón por el centro, también se puede dar ligera animación (opcional) */
-.category-center-text:hover .text-red{
-  transform: scale(1.03) translateY(-4px);
-  transition: transform 240ms ease;
 }
-
 .cta-deco {
   position: absolute;
   height: 40vh;        /* usar vh para mantener proporcionalidad en pantallas */
   width: auto;
-  bottom: -9%;
+  bottom: -15%;
   right: -8vw;         /* usar vw en lugar de px para no forzar scroll en todas las pantallas */
   z-index: 11;
   pointer-events: none;
@@ -683,18 +666,15 @@ position: block;
     display: flex;
     background-image: url('../img/texture.png');
     width: auto;
-    height:890px;
+    
+   
 }
 
-.parrafo_gif{
-    font-family: 'Jane Regular W00 Regular', sans-serif;
-    text-align: center;
-    text-align-last: center ;
-    width: 20%;
-    margin: 0 auto;
-    font-size: 50px;
-    font-weight:100;
-    
+.spline-2d{    
+    top: 10%;
+    right: 800px;
+     clip-path: rect(0% 91.7% 95% 0%);
+     overflow: hidden;
 }
 
 /****************************************************************************************/

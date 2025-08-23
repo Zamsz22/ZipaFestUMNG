@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
     
 </head>
 <body>
@@ -52,10 +52,11 @@
     </section>
 
     <section class="categories-section">
+        
     <div class="categories-container">
         <h2 class="section-title">CATEGORÍAS</h2>
-        
         <div class="categories-grid">
+
 
             <!-- Items posicionados con clases específicas -->
             <div class="category-item item-burger">
@@ -86,11 +87,6 @@
                     <p>EMPANADA FEST</p>
                 </a>
             </div>
-
-            
-            <div class="category-center-text" >
-                <h3>SABORES<span class="text-red">SIN</span>LIMITES</h3>
-            </div>
             <div class="category-item item-pizza">
                 <a href="#">
                     <img src="img/Categories/category_5.png" alt="Pizza">
@@ -98,11 +94,17 @@
                 </a>
             </div> 
 
-            <img src="img/Categories/sal_decoration.png" alt="" class="cta-deco cta-deco-right">
+            
 
         </div>
+        <div class="category-center-text">
+        <spline-viewer url="https://prod.spline.design/PoBfEW2RqD9-65wD/scene.splinecode"
+                        events-target="global" ></spline-viewer>
+        </div>
+        <img src="img/Categories/sal_decoration.png" alt="" class="cta-deco cta-deco-right">
     </div>
 </section>
+
 
 <section class="banner-section">
     <div class="banner-container">
@@ -125,7 +127,12 @@
 
 <section>
     <div class="animation_gif">
-        <p class="parrafo_gif">Zipaquirá impulsa su turismo gastronómico celebrando festivales que resaltan la riqueza culinaria local, invitando a visitantes a descubrir sabores únicos y tradiciones que fortalecen la identidad cultural del municipio.</p>
+        <div class="spline-2d">
+        <spline-viewer 
+            url="https://prod.spline.design/F5YNml5PVrF1TMJL/scene.splinecode"
+            events-target="global">
+        </spline-viewer>
+        </div>
     </div>
 </section>
 </section>
