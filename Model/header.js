@@ -5,5 +5,5 @@ window.addEventListener('scroll', () => {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
-    }
+    } 
 });
