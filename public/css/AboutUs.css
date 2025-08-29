@@ -21,7 +21,7 @@
 .history-section {
   position: relative;
   /* Espacio para el header fijo y un poco de aire abajo */
-  padding: 200px 24px 80px; 
+  padding: 200px 24px  0px 80px; 
   background-color: var(--color-background); /* Fondo blanco liso */
 }
 
@@ -33,6 +33,7 @@
   /* Le damos una altura para que los elementos absolutos tengan espacio.
      Ajusta este valor si es necesario. */
   min-height: 700px; 
+  margin-bottom: 50px;
 }
 
 /* --- Título (estilo idéntico a la imagen) --- */
@@ -63,8 +64,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(100%, 700px); /* Ajusta el tamaño del mapa */
+  transform: translate(-40%, -50%);
+  width: min(100%, 1200px); /* Ajusta el tamaño del mapa */
   opacity: 0.3; /* Más sutil como en la imagen */
   z-index: 1; /* Detrás de los nodos */
 }
@@ -138,11 +139,12 @@
   top: 10px; left: 10px;
 }
 
-.node--cake .badge img { width: 220px; }
+.node--cake .badge img { width: 220px; transform: scaleX(-1);}
 .node--cake .badge::before {
   width: 200px; height: 200px;
   background: var(--green);
   top: -15px; left: -10px;
+  
 }
 
 /* --- Párrafo de texto --- */
@@ -154,9 +156,13 @@
   max-width: 35ch; /* Ancho de línea para legibilidad */
 }
 
-/* ------- Personas (abajo, dentro del flujo) ------- */
+
 .people{
-  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 200px;
   z-index: 2;
 }
 .people img{
