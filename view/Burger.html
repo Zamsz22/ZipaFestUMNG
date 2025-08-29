@@ -4,16 +4,17 @@
      <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZipaFest</title>
-    <link rel="stylesheet" href="../../../public/css/style.css">
-    <link rel="stylesheet" href="../../../public/css/category.css">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/category.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
+    <script src="../Model/header.js" defer></script>
 </head>
 <body>
 <!-- ========================= HEADER ========================= -->
 <header>
-     <a href="../../../public/index.html" class="header-logo"><img src="../../../public/img/Logo/Negativo.svg" alt="ZipaFest Logo"></a>
+     <a href="../public/index.html" class="header-logo"><img src="../public/img/Logo/Negativo.svg" alt="ZipaFest Logo"></a>
      <ul class="nav-links">
         <li class="category">
             <a href="#">CATEGORÍAS
@@ -69,7 +70,7 @@
                     </p>
                 </div>
                 <div class="winner-image">
-                    <img src="../../../public/img/hamburguesa_suprema.png" alt="Hamburguesa Suprema Ganadora 2023">
+                    <img src="../public/img/hamburguesa_suprema.png" alt="Hamburguesa Suprema Ganadora 2023">
                 </div>
             </div>
 
@@ -83,7 +84,7 @@
                     </p>
                 </div>
                 <div class="winner-image">
-                    <img src="../../../public/img/hamburguesa_suprema.png" alt="Gourmet Deluxe Ganadora 2024">
+                    <img src="../public/img/hamburguesa_suprema.png" alt="Gourmet Deluxe Ganadora 2024">
                 </div>
             </div>
 
@@ -96,18 +97,18 @@
         <h2 class="section-title-participants">Participantes del Burger Fest</h2>
         <div class="participants-grid">
             <div class="participant-card item-one">
-                <img src="../../../public/img/hamburguesa_suprema.png" alt="Burger Place 1">
+                <img src="../public/img/hamburguesa_suprema.png" alt="Burger Place 1">
                 <h3>La Oveja y el Lobo</h3>
                 <p>Deliciosas hamburguesas gourmet con ingredientes frescos y salsas caseras.</p>
             </div>
 
             <div class="participant-card item-second">
-                <img src="../../../public/img/hamburguesa_suprema.png" alt="Burger Place 2">
+                <img src="../public/img/hamburguesa_suprema.png" alt="Burger Place 2">
                 <h3>Sabana Burger</h3>
                 <p>Hamburguesas clásicas y creativas, perfectas para todos los gustos.</p>
             </div>
             <div class="participant-card item-third">
-                <img src="../../../public/img/hamburguesa_suprema.png" alt="Burger Place 3">
+                <img src="../public/img/hamburguesa_suprema.png" alt="Burger Place 3">
                 <h3>La Estación</h3>
                 <p>Especializados en hamburguesas vegetarianas y veganas con mucho sabor.</p>
             </div>
@@ -124,7 +125,7 @@
     <div class="footer-container">
         <div class="footer-column-left">
             <div class="logo-group">
-                <img src="../../../public/img/Logo/Horizontal_Color.svg" alt="Escudo Alcaldía de Zipaquirá" class="footer-logo">
+                <img src="../public/img/Logo/Horizontal_Color.svg" alt="Escudo Alcaldía de Zipaquirá" class="footer-logo">
             </div>
             <div class="contact-info">
                 <h4>Punto de Información Turística</h4>
@@ -140,30 +141,18 @@
             <nav class="footer-nav">
                 <ul class="nav-links-footer">
                     <li><a href="../view/Rewards.html">CUPONES</a></li>
-                    <li><a href="../public/index.html#categories">CATEGORÍAS</a></li>
+                    <li><a href="/public/index.html#categories">CATEGORÍAS</a></li>
                     <li><a href="../view/AboutUs.html">SOBRE NOSOTROS</a></li>
                     <li><a href="../view/Contact.html">CONTÁCTANOS</a></li>
                 </ul>
             </nav>
         </div>
         <div class="footer-column-right">
-            <img src="../../../public/img/Logo/Negativo.svg" alt="Logo de Alcaldía de Zipaquirá" class="alcaldia-logo-big">
+            <img src="../public/img/Logo/Negativo.svg" alt="Logo de Alcaldía de Zipaquirá" class="alcaldia-logo-big">
             <div class="divider"></div>
         </div>
     </div>
 </footer> 
 <!-- ======================= END FOOTER ======================= -->
-
-   <script>
-    const header = document.querySelector('header');
-    const scrollThreshold = 50;  
-    window.addEventListener('scroll', () => {  
-        if (window.scrollY > scrollThreshold) {     
-            header.classList.add('scrolled');
-        } else {     
-            header.classList.remove('scrolled');
-        }
-    });
-</script>
 </body>
 </html>
