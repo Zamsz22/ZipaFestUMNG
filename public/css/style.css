@@ -27,6 +27,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     min-height: 100vh;
     background-color: var(--color-background);
@@ -245,7 +249,7 @@ header.scrolled {
 .categories-container{
     z-index: 2;
   max-width: 1180px;
-  min-height: 900px;
+  min-height: 800px;
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
@@ -256,7 +260,7 @@ header.scrolled {
   text-align: center;
   font-size: 84px;
   font-weight: 400;
-  margin: 0 0 60px;
+  margin: 0 0 40px;
   line-height: 0.95;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -271,7 +275,7 @@ header.scrolled {
   grid-template-areas:
     "burger coffee torta"
     "empanada center pizza";
-  gap: 80px 180px;
+  gap: 60px 180px;
   align-items: start;
   justify-items: center;
   padding-bottom: 100px;
@@ -875,194 +879,3 @@ position: block;
     transition: .3s ease;
 }
 
-/* PÁGINA DE CUPONES */
-.coupons-main {
-    text-align: center;
-    padding-top: 250px;
-    height: 930px;
-}
-
-.page-title {
-    z-index: -1000;
-    font-family: 'Ranchers';
-    font-size: 100PX;
-    font-weight: bold;
-    color: var(--color-text-dark);
-    margin-bottom: 50px;
-    position: relative;
-    display: inline-block;
-}
-
-.page-title::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 4px;
-    background-color: var(--color-text-dark);
-    margin-top: 5px;
-}
-
-.coupons-grid {
-display: flex;
-justify-content: center;
-gap: 30px;
-flex-wrap: wrap;
-position: relative;
-}
-
-.coupon-card {
-text-decoration: none;
-color: inherit;
-width: 250px;
-border-radius: 10px;
-overflow: hidden;
-transition: transform 0.3s ease;
-position: relative; 
-}
-
-.coupon-card:hover {
-    transform: translateY(-10px);
-}
-
-.coupon-card img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-}
-
-.coupon-info {
-    padding: 15px;
-}
-
-#burguer{
-    font-size: 19px;
-}
-
-.coupon-info h3 {
-    margin: 0 0 5px;
-    font-size: 22px;
-    text-align: left;
-    font-family: 'Nohemi';
-}
-
-.coupon-info p {
-    margin: 0 0 10px;
-    font-size: 16px;
-    color: var(--color-text-muted);
-    height: 40px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: left;
-}
-
-.ver-mas {
-    color: var(--color-primary);
-    font-weight: bold;
-    text-align: center;
-    text-decoration: underline;
-}
-
-/* ESTILOS DEL POP-UP (MODAL) */
-.popup-container {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-}
-
-.popup-container:target {
-    opacity: 1;
-    visibility: visible;
-}
-
-.popup-content {
-    z-index: 1000;
-    background-color: var(--color-background);
-    color: var(--color-text-dark);
-    width: 280px;
-    border-radius: 20px;
-    position: relative;
-    padding-top: 10px;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-}
-
-.popup-header h2 {
-    font-family: 'Nohemi';
-    font-size: 40px;
-    color: var(--color-text-dark);
-}
-
-.popup-body img {
-    width: 175px;
-    max-width: 175px;
-    margin: 20px 0;
-}
-
-.popup-body p {
-    font-family: 'Jane Regular W00 Regular',sans-serif;
-    text-align: left;
-    padding: 0 20px;
-    font-size: 14px;
-    color: var(--color-text-dark);
-    margin-bottom: 20px ;
-}
-
-.popup-footer {
-    background-color: var(--color-accent-secondary);
-    padding: 20px;
-    padding-top: 3px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    margin-top: 20px;
-}
-
-.redeem-btn {
-    font-family: 'Jane Regular W00 Regular',sans-serif;
-    background-color: var(--color-secondary);
-    color: var(--color-text-light);
-    border: none;
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-size: 18px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.sold-most {
-    text-align: left;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.sold-most-text {
-    font-family: 'Slackey';
-    font-size: 13px;
-    color: var(--color-text-dark);
-    display: block;
-    transform: rotate(-8deg);
-    padding-bottom: 3px;
-}
-
-.sold-most-text2 {
-    font-family: 'Slackey';
-    font-size: 20px;
-    color: var(--color-accent-primary);
-}
-
-.sold-most p {
-    text-align: left;
-    font-size: 12px;
-    margin: 5px 0 0;
-    color: var(--color-text-muted);
-    font-weight: normal;
-}

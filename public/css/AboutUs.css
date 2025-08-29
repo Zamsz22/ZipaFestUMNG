@@ -4,6 +4,7 @@
 :root{
   --ink:#111; --muted:#7f8183; --route:#7f8183;
   --yellow:#f6c132; --orange:#ff7a26; --green:#25b36a;
+  --red:rgb(230, 57, 71);
   --maxw:1200px;
   --color-primary: #FF7A00;
   --color-secondary: #222831;
@@ -17,104 +18,144 @@
   --color-hover-success: #ffa600;
 }
 
-/* Sección con espacio suficiente para el header fijo */
-.history-section{
+.history-section {
   position: relative;
-  display: block;
-  padding: 160px 24px 0px; /* top por header, bottom para personas */
-  color: var(--ink);
+  /* Espacio para el header fijo y un poco de aire abajo */
+  padding: 200px 24px 80px; 
+  background-color: var(--color-background); /* Fondo blanco liso */
 }
 
-/* Contenedor en GRID (adiós absolute para .node) */
-.history-wrap{
-  position: relative;
+/* --- Contenedor para Posicionamiento (el "lienzo") --- */
+.history-wrap {
+  position: relative; /* ¡El cambio más importante! */
   max-width: var(--maxw);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "title title"
-    "burger pizza"
-    "cake  cake";
-  gap: 40px 56px;
-  align-items: start;
-  z-index: 0; /* el mapa va detrás con z-index menor */
+  /* Le damos una altura para que los elementos absolutos tengan espacio.
+     Ajusta este valor si es necesario. */
+  min-height: 700px; 
 }
 
-/* ------- Título ------- */
-.history-title{
-  grid-area: title;
+/* --- Título (estilo idéntico a la imagen) --- */
+.history-title {
   text-align: center;
-  line-height: .95;
-  margin: 0 0 8px;
-  letter-spacing: .5px;
-  text-transform: uppercase;
-  filter: drop-shadow(0 1px 0 rgba(0,0,0,.05));
-  z-index: 2;
-}
-.history-title .kicker{
-  display:block; font-weight:800; font-size:clamp(18px,2.8vw,28px);
-}
-.history-title .main{
-  display:block; font-weight:900; font-size:clamp(36px,5.2vw,56px);
-}
-
-/* ------- Mapa de fondo ------- */
-.bg-map{
-  position: absolute;
-  inset: 70px 0 auto 50%;
-  transform: translateX(-50%);
-  width: min(100%, 1000px);
-  opacity:.15;
-  z-index: 1; /* detrás del contenido */
-  filter: grayscale(100%) contrast(110%) drop-shadow(0 6px 18px rgba(0,0,0,.08));
-  pointer-events:none; user-select:none;
-}
-
-/* ------- Nodos (imagen + círculo + texto) ------- */
-.node{
-  position: relative; /* ya no absolute */
-  width: 100%;
-  z-index: 2;
-}
-.node--burger{ grid-area: burger; }
-.node--pizza { grid-area: pizza; }
-.node--cake  { grid-area: cake;  }
-
-.node .badge{
+  margin-bottom: 40px;
   position: relative;
-  width: 100%;
-  max-width: 260px;
-  height: 180px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 10px;
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,.18));
+  z-index: 5; /* Por encima de todo */
 }
-.node .badge::before{
-  content:"";
-  position:absolute;
-  width:140px; height:140px;
-  border-radius:999px;
-  z-index:-1; mix-blend-mode:multiply; opacity:.9;
-}
-.badge--yellow::before{ background:var(--yellow); }
-.badge--orange::before{ background:var(--orange); }
-.badge--green::before{  background:var(--green); }
 
-.node .badge img{
-  width:100%; height:100%;
-  object-fit:cover; border-radius:14px;
+.history-title .kicker,
+.history-title .main {
+  font-family: 'Ranchers', cursive; /* Misma fuente para ambos */
+  text-transform: uppercase;
+  color: var(--color-text-dark);
+  line-height: 1;
 }
-.node .copy{
-  max-width: 42ch;
-  font-size: 15px; line-height:1.55; color:#333;
+.history-title .kicker {
+  font-size: clamp(36px, 5vw, 48px);
+}
+.history-title .main {
+  font-size: clamp(60px, 9vw, 90px);
+}
+
+/* --- Mapa de fondo con la ruta --- */
+/* IDEALMENTE, EL MAPA Y LA LÍNEA PUNTEADA DEBEN SER UNA SOLA IMAGEN PNG/SVG */
+.bg-map {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(100%, 700px); /* Ajusta el tamaño del mapa */
+  opacity: 0.3; /* Más sutil como en la imagen */
+  z-index: 1; /* Detrás de los nodos */
+}
+
+/* --- Estilo Base para los Nodos (comida + texto) --- */
+.node {
+  position: absolute; /* ¡Ahora cada nodo se puede posicionar libremente! */
+  width: 300px;
+  z-index: 2;
+  display: flex; /* Usamos flex para alinear imagen y texto */
+  align-items: center;
+  gap: 16px;
+}
+
+/* --- Posicionamiento específico para CADA nodo --- */
+/* ¡Puedes ajustar estos valores para un calce perfecto! */
+.node--burger {
+  top: 20px;
+  left: 5%;
+  flex-direction: column; /* Texto debajo de la imagen */
+  text-align: center;
+  width: 250px;
+}
+.node--pizza {
+  top: 180px;
+  right: 0%;
+  flex-direction: column; /* Texto debajo */
+  text-align: center;
+  width: 250px;
+}
+.node--cake {
+  top: 450px;
+  left: 10%;
+  flex-direction: column; /* Texto debajo */
+  text-align: center;
+  width: 280px;
+}
+
+/* --- Círculo de color e imagen --- */
+.node .badge {
+  position: relative;
+  margin-bottom: 10px; /* Espacio entre imagen y texto */
+}
+
+.node .badge img {
+  position: relative;
+  z-index: 2; /* Imagen sobre el círculo */
+  filter: drop-shadow(0 8px 15px rgba(0,0,0,0.2));
+}
+
+/* Círculo de color (pseudoelemento) */
+.node .badge::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1; /* Círculo detrás de la imagen */
+}
+
+/* --- Estilos específicos para cada círculo e imagen --- */
+.node--burger .badge img { width: 180px; }
+.node--burger .badge::before {
+  width: 160px; height: 160px;
+  background: var(--yellow);
+  top: -10px; left: -15px;
+}
+
+.node--pizza .badge img { width: 220px; }
+.node--pizza .badge::before {
+  width: 180px; height: 180px;
+  background: var(--red);
+  top: 10px; left: 10px;
+}
+
+.node--cake .badge img { width: 220px; }
+.node--cake .badge::before {
+  width: 200px; height: 200px;
+  background: var(--green);
+  top: -15px; left: -10px;
+}
+
+/* --- Párrafo de texto --- */
+.node .copy {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-muted); /* Color más suave */
+  max-width: 35ch; /* Ancho de línea para legibilidad */
 }
 
 /* ------- Personas (abajo, dentro del flujo) ------- */
 .people{
-  grid-column: 1 / -1; /* ocupa todo el ancho del grid */
-  display: grid; place-items: center;
   margin-top: 32px;
   z-index: 2;
 }

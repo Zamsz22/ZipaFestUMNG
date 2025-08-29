@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZipaFest</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/Contact.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
+</head>
+<body>
+
+<!-- ========================= HEADER ========================= -->
+<header>
+     <a href="../public/index.html" class="header-logo"><img src="../public/img/Logo/Negativo.svg" alt="ZipaFest Logo"></a>
+     <ul class="nav-links">
+        <li class="category">
+            <a href="categories-section">CATEGORÍAS
+                <span class="material-icons dropdown-icon">
+                    expand_more
+                </span>
+            </a>
+            <ul class="drop-down">
+                <li><a href="../view/Burger.html">BURGER FEST</a></li>
+                <li><a href="../view/Cake.html">TORTA FEST</a></li>
+                <li><a href="../view/Pizza.html">PIZZA FEST</a></li>
+                <li><a href="../view/Empanada.html">EMPANADA FEST</a></li>
+                <li><a href="../view/Coffee.html">COFFEE MASTER</a></li>
+            </ul>
+        </li>
+        <li> <a href="../view/Rewards.html">CUPONES</a></li>
+        <li> <a href="../view/AboutUs.html">SOBRE NOSOTROS</a></li>
+    </ul>
+    
+    <div class="header-right">
+        <a href="../view/Contact.html" class="contact-link">. CONTACTANOS .</a>
+        <a href="" class="login-button">INGRESAR</a>
+    </div>
+</header>
+<!-- ======================= END HEADER ======================= -->
+ <section class="contacto">
+  <div class="contacto__panel">
+    <!-- Columna izquierda: Título + Form -->
+    <div class="contacto__left">
+      <h2 class="contacto__title">
+        <span>CONTACTANOS</span>
+      </h2>
+
+      <form class="contacto__form" action="#" method="post">
+        <label class="input">
+          <span>Nombre</span>
+          <input type="text" name="nombre" placeholder="Tu nombre" required />
+        </label>
+
+        <label class="input">
+          <span>Correo electrónico</span>
+          <input type="email" name="email" placeholder="tucorreo@dominio.com" required />
+        </label>
+
+        <label class="input">
+          <span>Mensaje</span>
+          <textarea name="mensaje" rows="3" placeholder="Cuéntanos en qué podemos ayudarte" required></textarea>
+        </label>
+
+        <button class="btn" type="submit" aria-label="Enviar formulario de contacto">ENVIAR</button>
+      </form>
+    </div>
+
+    <!-- Columna derecha: Franja amarilla + tarjeta info -->
+    <div class="contacto__right">
+      <div class="contacto__stripe" aria-hidden="true"></div>
+
+      <!-- Pizza superpuesta (placeholder) -->
+      <img
+        class="contacto__pizza"
+        src="../public/img/AboutUs/PIZZA_AUS.png"
+        alt="Rebanada de pizza decorativa"
+      />
+
+      <!-- Tarjeta de información -->
+      <aside class="card">
+        <h3>Información</h3>
+        <p><a href="mailto:atencionalcliente@zqpfest.com">atencionalcliente@zqpfest.com</a></p>
+        <p><a href="tel:+573017570783">+57 301 757 0783</a></p>
+        <p>
+          Calle 4 # 11-01<br />
+          Sábados, domingos y festivos<br />
+          10:00 a. m. a 2:00 p. m.
+        </p>
+      </aside>
+
+      <!-- Redes -->
+                     <div class="social">
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                    </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================= FOOTER ========================= -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column-left">
+            <div class="logo-group">
+                <img src="../../../public/img/Logo/Horizontal_Color.svg" alt="Escudo Alcaldía de Zipaquirá" class="footer-logo">
+            </div>
+            <div class="contact-info">
+                <h4>Punto de Información Turística</h4>
+                <p>Calle: 4 N° 11-01</p>
+                <p>Sábados, domingos y festivos</p>
+                <p>10:00 a.m. a 2:00 p.m.</p>
+                <p class="copyright">Copyright © 2025</p>
+            </div>
+            
+        </div>
+        <div class="footer-column-center">
+            <div class="divider"></div>
+            <nav class="footer-nav">
+                <ul class="nav-links-footer">
+                    <li><a href="../view/Rewards.html">CUPONES</a></li>
+                    <li><a href="../public/index.html#categories">CATEGORÍAS</a></li>
+                    <li><a href="../view/AboutUs.html">SOBRE NOSOTROS</a></li>
+                    <li><a href="../view/Contact.html">CONTÁCTANOS</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-column-right">
+            <img src="../../../public/img/Logo/Negativo.svg" alt="Logo de Alcaldía de Zipaquirá" class="alcaldia-logo-big">
+            <div class="divider"></div>
+        </div>
+    </div>
+</footer> 
+<!-- ======================= END FOOTER ======================= -->
+    <script>
+    const header = document.querySelector('header');
+    const scrollThreshold = 50;  
+    window.addEventListener('scroll', () => {  
+        if (window.scrollY > scrollThreshold) {     
+            header.classList.add('scrolled');
+        } else {     
+            header.classList.remove('scrolled');
+        }
+    });
+</script>
+</body>
+</html>
