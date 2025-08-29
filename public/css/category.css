@@ -1,0 +1,369 @@
+@import url(https://db.onlinewebfonts.com/c/9367e6ff5b318b0bfeb1bbdfe9c3e075?family=Jane+Regular+W00+Regular);
+@import url(https://db.onlinewebfonts.com/c/29ddb4605533a38e086b48fa105e0d12?family=Nohemi);
+@import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ranchers&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ranchers&family=Slackey&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ranchers&family=Slackey&family=Smooch&display=swap);
+
+/* PALETA DE COLORES PRINCIPAL */
+:root {
+  --color-primary: #FF7A00;
+  --color-secondary: #222831;
+  --color-background: #FFFFFF;
+  --color-background-soft: #F9F9F9;
+  --color-text-light: #FFFFFF;
+  --color-text-dark: #222831;
+  --color-text-muted: #6c757d;
+  --color-accent-primary: #E63946;
+  --color-accent-secondary: #FFC107;
+  --color-hover-success: #ffa600;
+}
+
+/* SECCION INTRODUCCION */
+.intro-section {
+    background: var(--color-background-soft);
+    padding: 200px 50px 50px 10px;
+    color: var(--color-text-dark);
+    text-align: center;
+}
+.intro-section::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 1050px;    
+    margin-top: 20px;              
+    height: 0;       
+    right: 50%;         
+    border-top: 2px dashed #7f8183;                  
+    transform: translateX(50%);   
+}
+.intro-section hr{
+    width: 1%;
+    border: 0px solid var(--color-primary);
+    margin: 0px auto;
+}
+.intro-text h1 {
+    line-height:0.9;
+    font-size: 50px;
+    margin: 0px auto;
+    padding: 0px auto;
+    font-family: 'Ranchers', cursive;
+}
+.intro-text h1 > p{
+    position: relative;
+    display: inline-block;
+    font-size: 100px;
+    margin: 0px auto;
+    padding: 0px auto;
+    font-family: 'Ranchers', cursive;
+   
+}
+
+#intro-text h1 {
+    line-height:0.9;
+    font-size: 60px;
+    margin: 0px auto;
+    padding: 0px auto;
+    font-family: 'Ranchers', cursive;
+}
+#intro-text h1 > p{
+    position: relative;
+    display: inline-block;
+    font-size: 60px;
+    margin: 0px auto;
+    padding: 0px auto;
+    font-family: 'Ranchers', cursive;
+}
+
+#intro-text-2 h1 {
+    line-height:0.9;
+    font-size: 60px;
+    margin: 0px auto;
+    padding: 0px auto;
+    font-family: 'Ranchers', cursive;
+}
+#intro-text-2 h1 > p{
+    position: relative;
+    display: inline-block;
+    font-size: 80px;
+    margin: 0px auto;
+    padding: 0px auto;
+    font-family: 'Ranchers', cursive;
+}
+
+#intro-text-3 h1 {
+    line-height:0.9;
+    font-size: 50px;
+    margin: 0px auto;
+    padding: 0px auto;
+    font-family: 'Ranchers', cursive;
+}
+#intro-text-3 h1 > p{
+    position: relative;
+    display: inline-block;
+    font-size: 80px;
+    margin: 0px auto;
+    padding: 0px auto;
+    font-family: 'Ranchers', cursive;
+}
+.intro-text {
+    display: flex;
+    font-size: 20px;
+    margin: 10px 500px;
+}
+
+.intro-text > p {
+    font-weight: 400;
+    line-height:1;
+    color: var(--color-text-dark);
+    margin: 0px auto;
+    padding: 0px 20px;
+    text-align:start;
+    align-content: center;
+}
+
+/* ================= SECCION WINNERS ================= */
+
+.winners-section {
+    background: var(--color-background-soft);
+    padding: 10px 20px 80px 20px; 
+    color: var(--color-text-dark);
+    overflow: hidden;
+}
+
+.winners-container {
+    max-width: 1400px; 
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title-winners {
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 60px; 
+    text-transform: uppercase;
+    font-family: 'Ranchers', cursive;
+    color: transparent;
+    background: linear-gradient(-180deg, var(--color-accent-secondary), var(--color-primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+
+.winners-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 80px; 
+    position: relative; 
+}
+
+
+.winners-flex::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%; 
+    top: 0;
+    transform: translateX(-50%); 
+    width: 2px;
+    height: 100%; 
+    border-left: 2px dashed #b0b3b8; 
+}
+
+
+.winner-card {
+    display: flex;
+    align-items: center; 
+    gap: 30px; 
+    max-width: 550px; 
+    text-align: left; 
+}
+
+
+.winner-content {
+    flex: 2; 
+}
+
+
+.winner-category {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-primary);
+    background-color: rgba(255, 122, 0, 0.1);
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.winner-plate-name {
+    font-family: 'Nohemi', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-text-dark); 
+    margin-bottom: 15px;
+}
+
+
+.winner-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    margin: 0;
+}
+
+.winner-image {
+    flex: 1; 
+    max-width: 200px;
+}
+
+.winner-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px; 
+    background-color: #e9ecef; 
+    border: 1px solid #dee2e6; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+/* SECCIÓN DE CATEGORÍAS */
+/* ================================ */
+.section-title-participants {
+    font-size: 100px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-family: 'Ranchers', cursive;
+}
+.participants-section {
+    background: var(--color-secondary);
+    padding: 50px 0 80px 0;
+    color: var(--color-text-light);
+    overflow: hidden;
+    margin-bottom: 60px;;
+    position: relative;
+}
+
+.participants-section::after{
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    z-index: 3;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent-secondary));
+}
+.participants-section::before{
+    content: '';
+    position: absolute;
+    display: block;
+    top: 99.5%;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    z-index: 3;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent-secondary));
+}
+   
+
+.participants-container{
+    min-height: 800px;
+    height: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.participants-grid {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "item-one item-two item-three";
+    gap: 80px 80px;
+    align-items: start;
+    justify-items: center;
+    margin-top: 40px;
+    padding-bottom: 50px;
+}
+
+.participants-grid::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 2px;
+    border-left: 2px dashed #7f8183;
+    height: 350px;
+    right: 40%;
+}
+
+.participants-grid::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 2px;
+    border-right: 2px dashed #7f8183;
+    height: 350px;
+    right: 60%;;
+
+}
+.item-one {
+    grid-area: item-one;
+}
+
+.item-two {
+    grid-area: item-two;
+}
+
+.item-three {
+    grid-area: item-three;
+}
+
+.participant-card {
+    background: var(--color-secondary);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    border: 0.01px solid var(--color-text-muted);
+    transition: transform 0.5s ease, all 0.3s ease;
+    cursor: pointer;
+    
+}
+.participant-card img {
+    max-width: 260px;
+    border-radius: 5%;
+}
+
+.participant-spline {
+  position:relative;
+  padding-top: 10%;
+  right: -40%;
+  transform: translate(-50%, -50%);
+  z-index: 1; 
+  pointer-events: none;
+
+}
+.participant-spline > spline-viewer {
+  display: block;
+  pointer-events: none; 
+}
+
+.participant-card:hover {
+    transform: translateY(-10px);
+    border: 0.2px solid var(--color-accent-secondary);
+    transition: transform 0.5s ease, all 0.3s ease;
+}

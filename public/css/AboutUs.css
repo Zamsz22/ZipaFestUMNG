@@ -1,0 +1,144 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ranchers&display=swap);
+
+
+:root{
+  --ink:#111; --muted:#7f8183; --route:#7f8183;
+  --yellow:#f6c132; --orange:#ff7a26; --green:#25b36a;
+  --maxw:1200px;
+  --color-primary: #FF7A00;
+  --color-secondary: #222831;
+  --color-background: #FFFFFF;
+  --color-background-soft: #F9F9F9;
+  --color-text-light: #FFFFFF;
+  --color-text-dark: #222831;
+  --color-text-muted: #6c757d;
+  --color-accent-primary: #E63946;
+  --color-accent-secondary: #FFC107;
+  --color-hover-success: #ffa600;
+}
+
+/* Sección con espacio suficiente para el header fijo */
+.history-section{
+  position: relative;
+  display: block;
+  padding: 160px 24px 0px; /* top por header, bottom para personas */
+  color: var(--ink);
+}
+
+/* Contenedor en GRID (adiós absolute para .node) */
+.history-wrap{
+  position: relative;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "title title"
+    "burger pizza"
+    "cake  cake";
+  gap: 40px 56px;
+  align-items: start;
+  z-index: 0; /* el mapa va detrás con z-index menor */
+}
+
+/* ------- Título ------- */
+.history-title{
+  grid-area: title;
+  text-align: center;
+  line-height: .95;
+  margin: 0 0 8px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  filter: drop-shadow(0 1px 0 rgba(0,0,0,.05));
+  z-index: 2;
+}
+.history-title .kicker{
+  display:block; font-weight:800; font-size:clamp(18px,2.8vw,28px);
+}
+.history-title .main{
+  display:block; font-weight:900; font-size:clamp(36px,5.2vw,56px);
+}
+
+/* ------- Mapa de fondo ------- */
+.bg-map{
+  position: absolute;
+  inset: 70px 0 auto 50%;
+  transform: translateX(-50%);
+  width: min(100%, 1000px);
+  opacity:.15;
+  z-index: 1; /* detrás del contenido */
+  filter: grayscale(100%) contrast(110%) drop-shadow(0 6px 18px rgba(0,0,0,.08));
+  pointer-events:none; user-select:none;
+}
+
+/* ------- Nodos (imagen + círculo + texto) ------- */
+.node{
+  position: relative; /* ya no absolute */
+  width: 100%;
+  z-index: 2;
+}
+.node--burger{ grid-area: burger; }
+.node--pizza { grid-area: pizza; }
+.node--cake  { grid-area: cake;  }
+
+.node .badge{
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  height: 180px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.18));
+}
+.node .badge::before{
+  content:"";
+  position:absolute;
+  width:140px; height:140px;
+  border-radius:999px;
+  z-index:-1; mix-blend-mode:multiply; opacity:.9;
+}
+.badge--yellow::before{ background:var(--yellow); }
+.badge--orange::before{ background:var(--orange); }
+.badge--green::before{  background:var(--green); }
+
+.node .badge img{
+  width:100%; height:100%;
+  object-fit:cover; border-radius:14px;
+}
+.node .copy{
+  max-width: 42ch;
+  font-size: 15px; line-height:1.55; color:#333;
+}
+
+/* ------- Personas (abajo, dentro del flujo) ------- */
+.people{
+  grid-column: 1 / -1; /* ocupa todo el ancho del grid */
+  display: grid; place-items: center;
+  margin-top: 32px;
+  z-index: 2;
+}
+.people img{
+  width: min(900px, 92vw);
+  height: auto;
+  filter: drop-shadow(0 16px 24px rgba(0,0,0,.2));
+}
+
+/* ------- Responsive básico ------- */
+@media (max-width: 980px){
+  .history-wrap{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "burger"
+      "pizza"
+      "cake";
+    gap: 28px;
+  }
+  .node .badge{ max-width: 320px; height: 200px; margin-inline:auto; }
+  .node .copy{ margin-inline:auto; text-align:center; }
+}
+@media (max-width: 640px){
+  .history-section{ padding-top: 140px; }
+  .bg-map{ width: 92%; opacity:.18; }
+}
