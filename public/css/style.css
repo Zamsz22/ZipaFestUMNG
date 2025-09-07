@@ -260,7 +260,7 @@ header.scrolled {
 .section-title{ 
   font-family: 'Ranchers';
   text-align: center;
-  font-size: 84px;
+  font-size: 10vw;
   font-weight: 400;
   margin: 0 0 40px;
   line-height: 0.95;
@@ -876,3 +876,9 @@ position: block;
     transition: .3s ease;
 }
 
+/* SECCIÓN DE MEDIA QUERY */
+@media only screen and (max-width: 768px) {
+header .nav-links{
+background-color: #E63946;
+}
+}
