@@ -4,194 +4,224 @@
 @import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ranchers&family=Slackey&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ranchers&family=Slackey&family=Smooch&display=swap);
 
-/* PALETA DE COLORES PRINCIPAL */
-:root {
-  --color-primary: #FF7A00;
-  --color-secondary: #222831;
-  --color-background: #FFFFFF;
-  --color-background-soft: #F9F9F9;
-  --color-text-light: #FFFFFF;
-  --color-text-dark: #222831;
-  --color-text-muted: #6c757d;
-  --color-accent-primary: #E63946;
-  --color-accent-secondary: #FFC107;
-  --color-hover-success: #ffa600;
+
+/* ===================================================================== */
+/* ============= CONTENEDOR CON EL EFECTO DE PAPEL =============== */
+/* ===================================================================== */
+
+main {
+    padding-top: 1px;
+    margin-top: -1px; /* Opcional: Esto anula el píxel de espacio extra que se creó */
 }
 
-/* SECCION INTRODUCCION */
+main {
+    display: flow-root;
+}
+.bg-grid-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(/public/img/Categories/bg.png);
+    z-index: -50;
+    filter: blur(0.8px) brightness(1.8) opacity(40%);
+    top: 100%;
+}
+
+.fest-content-paper {
+    position: relative;
+    background-color: var(--color-text-light);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.568);
+    border-radius: 16px;
+    
+    width: 90%;
+    max-width: 1200px;
+    margin: 200px auto 0 auto; 
+
+    padding: clamp(20px, 5vw, 200px) 0 clamp(80px, 10vw, 120px) 0;
+}
+
+/* Cinta adhesiva */
+.fest-content-paper::before {
+    content: "";
+    position: absolute;
+    z-index: 5;
+    opacity: 1;
+
+    left: 50%;
+    top: -2%;
+    transform: translateX(-50%) rotate(-2.5deg);
+    width: clamp(160px, 22vw, 320px);
+    height: 48px;
+    background: #d9cfb8;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.212);
+    border-radius: 6px;
+}
+
+/* Borde rasgado inferior */
+.fest-content-paper::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -36px;
+    height: 110px;
+    background: inherit;
+    z-index: 10;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.479));
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'><path d='M0,0 H100 V20 L95,16 90,20 85,16 80,20 75,16 70,20 65,16 60,20 55,16 50,20 45,16 40,20 35,16 30,20 25,16 20,20 15,16 10,20 5,16 0,20 Z' fill='black'/></svg>") bottom / 100% 100% no-repeat;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'><path d='M0,0 H100 V20 L95,16 90,20 85,16 80,20 75,16 70,20 65,16 60,20 55,16 50,20 45,16 40,20 35,16 30,20 25,16 20,20 15,16 10,20 5,16 0,20 Z' fill='black'/></svg>") bottom / 100% 100% no-repeat;
+
+}
+
+
+/* ================================================= */
+/* ============== SECCION INTRODUCCION ============= */
+/* ================================================= */
+
 .intro-section {
-    background: var(--color-background-soft);
-    padding: 200px 50px 50px 10px;
-    color: var(--color-text-dark);
+    position: relative;
+    padding: 0 0 5% 0;
+    color: var(--color-accent-thirt);
     text-align: center;
 }
-.intro-section::after{
+
+.intro-container {
+    max-width: 1400px;
+    padding: 0 clamp(20px, 8vw, 140px);
+    color: var(--color-accent-thirt);
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+
+.intro-section::after {
     content: '';
     display: block;
     position: absolute;
-    width: 1050px;    
-    margin-top: 20px;              
-    height: 0;       
-    right: 50%;         
-    border-top: 2px dashed #7f8183;                  
-    transform: translateX(50%);   
-}
-.intro-section hr{
-    width: 1%;
-    border: 0px solid var(--color-primary);
-    margin: 0px auto;
-}
-.intro-text h1 {
-    line-height:0.9;
-    font-size: 50px;
-    margin: 0px auto;
-    padding: 0px auto;
-    font-family: 'Ranchers', cursive;
-}
-.intro-text h1 > p{
-    position: relative;
-    display: inline-block;
-    font-size: 100px;
-    margin: 0px auto;
-    padding: 0px auto;
-    font-family: 'Ranchers', cursive;
-   
+    width: 90%;
+    max-width: 1050px;
+    margin-top: clamp(20px, 4vw, 40px);
+    height: 0;
+    left: 50%;
+    border-top: 2px dashed #7f8183;
+    transform: translateX(-50%);
 }
 
-#intro-text h1 {
-    line-height:0.9;
-    font-size: 60px;
-    margin: 0px auto;
-    padding: 0px auto;
-    font-family: 'Ranchers', cursive;
-}
-#intro-text h1 > p{
-    position: relative;
-    display: inline-block;
-    font-size: 60px;
-    margin: 0px auto;
-    padding: 0px auto;
-    font-family: 'Ranchers', cursive;
-}
-
-#intro-text-2 h1 {
-    line-height:0.9;
-    font-size: 60px;
-    margin: 0px auto;
-    padding: 0px auto;
-    font-family: 'Ranchers', cursive;
-}
-#intro-text-2 h1 > p{
-    position: relative;
-    display: inline-block;
-    font-size: 80px;
-    margin: 0px auto;
-    padding: 0px auto;
-    font-family: 'Ranchers', cursive;
-}
-
-#intro-text-3 h1 {
-    line-height:0.9;
-    font-size: 50px;
-    margin: 0px auto;
-    padding: 0px auto;
-    font-family: 'Ranchers', cursive;
-}
-#intro-text-3 h1 > p{
-    position: relative;
-    display: inline-block;
-    font-size: 80px;
-    margin: 0px auto;
-    padding: 0px auto;
-    font-family: 'Ranchers', cursive;
-}
 .intro-text {
     display: flex;
-    font-size: 20px;
-    margin: 10px 500px;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: var(--color-accent-thirt);
+    align-items: center;
+    gap: 2rem;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+}
+
+.intro-text h1 {
+    line-height: 0.9;
+    font-family: 'BBH Sans Hegarty', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    margin: 0;
+    width: 100%;
+}
+
+.intro-text h1 p {
+    font-family: 'BBH Sans Hegarty', sans-serif;
+    font-size: clamp(3rem, 6vw, 6rem);
+    margin: 0;
 }
 
 .intro-text > p {
     font-weight: 400;
-    line-height:1;
-    color: var(--color-text-dark);
-    margin: 0px auto;
-    padding: 0px 20px;
-    text-align:start;
+    line-height: 1.4;
+    color: var(--color-accent-thirt);
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: left;
+    max-width: 600px;
     align-content: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* ================= SECCION WINNERS ================= */
+.empanada-text h1{
+    font-size: clamp(1rem, 8vw, 3rem);
+}
+
+.coffee-text h1 p{
+ font-size: clamp(3rem, 2vw, 5rem);
+}
+
+
+/* ================================================= */
+/* ================ SECCION WINNERS ================ */
+/* ================================================= */
 
 .winners-section {
-    background: var(--color-background-soft);
-    padding: 10px 20px 80px 20px; 
-    color: var(--color-text-dark);
-    overflow: hidden;
+    color: var(--color-accent-thirt);
+    padding: 4rem 0 0 0;
 }
 
 .winners-container {
-    max-width: 1400px; 
+    max-width: 1400px;
+    padding: 0 clamp(20px, 5vw, 100px);
     margin: 0 auto;
     text-align: center;
 }
 
 .section-title-winners {
-    font-size: 50px;
+    font-size: clamp(2.5rem, 6vw, 3.125rem);
     font-weight: 700;
     text-align: center;
-    margin-bottom: 60px; 
+    margin-bottom: clamp(40px, 8vh, 80px);
     text-transform: uppercase;
-    font-family: 'Ranchers', cursive;
+    font-family: 'BBH Sans Hegarty', sans-serif;
     color: transparent;
-    background: linear-gradient(-180deg, var(--color-accent-secondary), var(--color-primary));
+    color: var(--color-accent-thirt);
     -webkit-background-clip: text;
     background-clip: text;
 }
 
-
 .winners-flex {
     display: flex;
     justify-content: center;
-    align-items: center; 
-    gap: 80px; 
-    position: relative; 
+    align-items: stretch; /* Alinea las tarjetas para que tengan la misma altura */
+    flex-wrap: wrap;
+    gap: clamp(40px, 6vw, 80px);
+    position: relative;
 }
-
 
 .winners-flex::after {
     content: '';
-    display: block;
     position: absolute;
-    left: 50%; 
+    left: 50%;
     top: 0;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
     width: 2px;
-    height: 100%; 
-    border-left: 2px dashed #b0b3b8; 
+    height: 100%;
+    border-left: 2px dashed #b0b3b8;
 }
-
 
 .winner-card {
     display: flex;
-    align-items: center; 
-    gap: 30px; 
-    max-width: 550px; 
-    text-align: left; 
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    text-align: left;
+    flex: 1 1 450px;
+    max-width: 550px; /* Un límite para que no se estiren demasiado */
 }
-
 
 .winner-content {
-    flex: 2; 
+    flex: 2;
+    min-width: 250px;
 }
 
-
 .winner-category {
-    display: inline-block;
     font-size: 12px;
     font-weight: 700;
-    color: var(--color-primary);
-    background-color: rgba(255, 122, 0, 0.1);
+    color: var(--color-accent-thirt);
+    background-color: rgba(10, 99, 51, 0.1);
     padding: 5px 12px;
     border-radius: 20px;
     text-transform: uppercase;
@@ -200,170 +230,240 @@
 
 .winner-plate-name {
     font-family: 'Nohemi', sans-serif;
-    font-size: 36px;
+    font-size: clamp(1.5rem, 3vw, 1.875rem);
     font-weight: 700;
-    color: var(--color-text-dark);
-    margin: 0;
+    color: var(--color-accent-thirt);
+    margin: 15px 0 15px 0;
     padding-bottom: 10px;
-    border-bottom: 2px solid var(--color-text-dark); 
-    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-accent-thirt);
 }
 
-
 .winner-description {
-    font-size: 16px;
-    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    line-height: 1.4;
     color: var(--color-text-dark);
-    margin: 0;
+    font-weight: 300;
 }
 
 .winner-image {
-    flex: 1; 
+    flex: 1;
     max-width: 200px;
+    margin: 0 auto;
 }
 
 .winner-image img {
     width: 100%;
     height: auto;
-    border-radius: 20px; 
-    background-color: #e9ecef; 
-    border: 1px solid #dee2e6; 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-/* SECCIÓN DE CATEGORÍAS */
-/* ================================ */
-.section-title-participants {
-    font-size: 100px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    font-family: 'Ranchers', cursive;
-}
+
+/* ================================================= */
+/* ============== SECCION PARTICIPANTES ============ */
+/* ================================================= */
+
 .participants-section {
-    background: var(--color-secondary);
-    padding: 50px 0 80px 0;
     color: var(--color-text-light);
-    overflow: hidden;
-    margin-bottom: 60px;;
     position: relative;
+    /* Un margen superior para separarlo del "papel" */
 }
 
-.participants-section::after{
-    content: '';
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    z-index: 3;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-accent-secondary));
-}
-.participants-section::before{
-    content: '';
-    position: absolute;
-    display: block;
-    top: 99.5%;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    z-index: 3;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-accent-secondary));
-}
-   
-
-.participants-container{
-    min-height: 800px;
-    height: 900px;
+.participants-container {
+    background: var(--color-primary);
     margin: 0 auto;
-    padding: 0 20px;
+    padding: clamp(60px, 10vw, 100px) clamp(20px, 5vw, 80px); /* Padding fluido */
     text-align: center;
-    align-items: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+
+.section-title-participants {
+    padding-bottom: 2rem; /* Aumentamos un poco el espacio inferior */
+    font-size: clamp(2.5rem, 7vw, 3.75rem);
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'BBH Sans Hegarty', sans-serif;
+    line-height: 1.1; /* Mejora la legibilidad en saltos de línea */
 }
 
 .participants-grid {
-    max-width: 1200px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto;
-    grid-template-areas: 
-    "item-one item-two item-three";
-    gap: 80px 80px;
-    align-items: start;
-    justify-items: center;
-    margin-top: 40px;
-    padding-bottom: 50px;
-}
-
-.participants-grid::after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 2px;
-    border-left: 2px dashed #7f8183;
-    height: 350px;
-    right: 40%;
-}
-
-.participants-grid::before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 2px;
-    border-right: 2px dashed #7f8183;
-    height: 350px;
-    right: 60%;;
-
-}
-.item-one {
-    grid-area: item-one;
-}
-
-.item-two {
-    grid-area: item-two;
-}
-
-.item-three {
-    grid-area: item-three;
+    /* Por defecto (móvil) es una sola columna */
+    grid-template-columns: 1fr;
+    gap: clamp(50px, 8vw, 100px); /* Espacio adaptable entre tarjetas */
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo para la rejilla en pantallas muy grandes */
+    margin-top: 20px;
 }
 
 .participant-card {
-    background: var(--color-secondary);
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinea el texto al inicio */
     width: 100%;
-    max-width: 300px;
-    border: 0.01px solid var(--color-text-muted);
-    transition: transform 0.5s ease, all 0.3s ease;
-    cursor: pointer;
+    max-width: 380px; /* Un poco más de ancho para que respire */
+    margin: 0 auto;
     
+    /* Padding optimizado para que el contenido encaje mejor */
+    padding: 35% 12% 10% 12%; 
+    
+    text-decoration: none;
+    background-image: url('../img/Fest/participantes_fotos/participantes_fotos/Recurso 16tarjeta.png');
+    background-position: center top;
+    background-size: 100% 100%; /* Asegura que la imagen de fondo cubra toda la tarjeta */
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    color: var(--color-primary);
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
+
+.participant-card h3 {
+    font-family: 'Nohemi', sans-serif;
+    font-size: clamp(1.2rem, 4vw, 1.5rem); /* Título más grande y fluido */
+    margin-bottom: 0.75rem;
+    color: var(--color-primary)
+}
+
+.participant-card p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    line-height: 1.4; /* Mejor interlineado */
+    color: #4f4f4f;
+    margin-bottom: 1.5rem; /* Más espacio antes de la imagen */
+}
+
 .participant-card img {
-    max-width: 260px;
-    border-radius: 5%;
-}
-
-.participant-spline {
-  position:relative;
-  padding-top: 10%;
-  right: -40%;
-  transform: translate(-50%, -50%);
-  z-index: 1; 
-  pointer-events: none;
-
-}
-.participant-spline > spline-viewer {
-  display: block;
-  pointer-events: none; 
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transform: rotate(-12deg) scale(1.1); 
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+    margin-top: auto; 
+    transition: transform 0.3s ease; 
 }
 
 .participant-card:hover {
-    transform: translateY(-10px);
-    border: 0.2px solid var(--color-accent-secondary);
-    transition: transform 0.5s ease, all 0.3s ease;
+    transform: translateY(-15px) scale(1.03); 
+    filter: none; 
+}
+
+.participant-card:hover img {
+    transform: rotate(-8deg) scale(1.15); 
+}
+
+/* ================================================= */
+/* ================= MEDIA QUERIES ================= */
+/* ================================================= */
+
+
+@media (max-width:768px) {
+ .fest-content-paper{
+        padding-top: 60px;
+    }
+    .participants-grid {
+       
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) and (min-width: 768px) {
+    .intro-text {
+        flex-wrap: nowrap;
+    }
+    .participants-grid {
+        grid-template-columns: repeat(2, 2fr);
+    }
+    .winners-flex::after{
+        opacity: 0;
+    }
+    
+}
+@media (min-width: 768px){
+.participants-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .intro-text {
+        flex-wrap: nowrap;
+    }
+    .participants-grid {
+
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+}
+
+@media (min-width: 1024px) {
+    .winners-flex::after{
+        opacity: 0;
+    }
+     .winners-flex::after {
+        opacity: 0;
+    }
+}
+
+@media (min-width: 1000px) {
+     .winners-flex::after {
+        opacity: 0;
+    }
+}
+@media (max-width: 1000px) {
+     .winners-flex::after {
+        opacity: 0;
+    }
+     .participant-card{
+        align-items: center;
+    }
+    .participant-card img{
+        max-width: 200px;
+    }
+
+}
+
+/* ================================================= */
+/* ==== MEDIA QUERY PARA MÓVILES MUY PEQUEÑOS (< 480px) ==== */
+/* ================================================= */
+
+@media (max-width: 680px) {
+
+ 
+    .winner-card {
+        flex-direction: column;
+        text-align: center; 
+    }
+
+ 
+    .winner-plate-name {
+        display: inline-block; 
+        border-right: none;
+        border-left: none;
+    }
+
+  
+    .winners-flex::after {
+        display: none;
+    }
+
+    .fest-content-paper{
+        padding-top: 60px;
+    }
+    .participants-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .participant-card{
+        align-items: center;
+    }
+    .participant-card img{
+        max-width: 200px;
+    }
+
+
+
 }

@@ -2,19 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZipaFest</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="ZipaFest - Festivales gastronómicos de Zipaquirá">
+    <title>ZipaFest - Sobre Nosotros</title>
+    
+    <!-- CSS Files -->
     <link rel="stylesheet" href="../public/css/style.css">
     <link rel="stylesheet" href="../public/css/AboutUs.css">
+    
+    <!-- Google Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
-    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
 <!-- ========================= HEADER ========================= -->
 <header>
-     <a href="../public/index.html" class="header-logo"><img src="../public/img/Logo/Negativo.svg" alt="ZipaFest Logo"></a>
-     <ul class="nav-links">
+    <a href="../public/index.html" class="header-logo">
+        <img src="../public/img/Logo/Negativo.svg" alt="ZipaFest Logo">
+    </a>
+    
+    <!-- Menú Hamburguesa para móvil -->
+    <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <ul class="nav-links">
         <li class="category">
             <a href="../public/index.html#categories">CATEGORÍAS
                 <span class="material-icons dropdown-icon">
@@ -29,8 +46,8 @@
                 <li><a href="../view/Coffee.html">COFFEE MASTER</a></li>
             </ul>
         </li>
-        <li> <a href="../view/Rewards.html">CUPONES</a></li>
-        <li> <a href="../view/AboutUs.html">SOBRE NOSOTROS</a></li>
+        <li><a href="../view/Rewards.html">CUPONES</a></li>
+        <li><a href="../view/AboutUs.html">SOBRE NOSOTROS</a></li>
     </ul>
     
     <div class="header-right">
@@ -40,82 +57,81 @@
 </header>
 <!-- ======================= END HEADER ======================= -->
 
+<!-- ======================= MAIN CONTENT ======================= -->
+<main>
+    <section id="our-history" class="history-section"> 
+        <!-- Elementos decorativos -->
+        <div class="muneco1"></div>  
+        <div class="muneco2"></div>  
+        <div class="muneco3"></div>  
+        <div class="muneco4"></div> 
+        <div class="grid"></div>
+        
+        <div class="history-wrap">
+            <!-- Título en dos líneas -->
+            <h2 class="history-title">
+                <span class="kicker">NUESTRA</span>
+                <span class="main">HISTORIA</span>
+            </h2>
 
-
-
-                <section id="our-history" class="history-section">
-                <div class="history-wrap">
-
-                    <!-- Título en dos líneas -->
-                    <h2 class="history-title">
-                    <span class="kicker">NUESTRA</span>
-                    <span class="main">HISTORIA</span>
-                    </h2>
-
-                    <!-- Imagen de fondo -->
-                    <img
-                    class="bg-map"
-                    src="../public/img/AboutUs/Recurso_1.png"
-                    alt="Mapa del municipio (fondo decorativo)"
-                    aria-hidden="true"
-                    />
-
-
-                    <!-- Nodo 1 (hamburguesa) -->
-                    <article class="node node--burger">
-                    <figure class="badge badge--yellow">
-                        <img src="../public/img/AboutUs/BURGUER_AUS.png" alt="Imagen 1 (placeholder)" />
-                    </figure>
-                    <p class="copy">
-                        Este proyecto surge como respuesta a esa necesidad un espacio digital donde la memoria de cada festival quede registrada y disponible para todos. 
-                        Así, buscamos que la tradición gastronómica no solo se mantenga viva, sino que también llegue a más personas dentro y fuera de la región.
-                    </p>
-                    </article>
-
-                    <!-- Nodo 2 (pizza) -->
-                    <article class="node node--pizza">
-                    <figure class="badge badge--orange">
-                        <img src="../public/img/AboutUs/PIZZA_AUS.png" alt="Imagen 2 (placeholder)" />
-                    </figure>
-                    <p class="copy">
-                        Desde sus inicios, los festivales gastronómicos han sido más que un encuentro de sabores: son el reflejo de nuestra identidad, 
-                        de los saberes ancestrales y de la unión de nuestra comunidad. Sin embargo, la falta de un lugar que centralice toda la información 
-                        hacía que muchos de estos recuerdos se perdieran con el tiempo.
-                    </p>
-                    </article>
-
-                    <!-- Nodo 3 (torta) -->
-                    <article class="node node--cake">
-                    <figure class="badge badge--green">
-                        <img src="../public/img/AboutUs/TORTA_AUS.png" alt="Imagen 3 (placeholder)" />
-                    </figure>
-                    <p class="copy"> 
-                        Conscientes de la importancia de la tradición gastronómica de nuestro municipio, decidimos crear una plataforma digital que conserve la memoria 
-                        de los festivales y la ponga al alcance de todos. Lo que antes estaba disperso en afiches, 
-                        notas o recuerdos aislados, ahora se integra en un solo espacio accesible y actualizado
-                    </p>
-                    </article>
-
-                    <!-- Personas (abajo de la sección) -->
-                    
-
-                </div>
-                <div class="people">
-                    <img
-                        src="../public/img/AboutUs/PIPOL.png"
-                        alt="Grupo de personas celebrando (placeholder)"
-                    />
+            <div class="linea-tiempo">
+                <!-- ===== BLOQUE 1 ===== -->
+                <div class="bloque bloque-izquierda">
+                    <!-- Tarjeta roja -->
+                    <div class="tarjeta">
+                        <div class="inforojo">
+                            <h3>COMO SURGE</h3>
+                            <p>Este proyecto surge como respuesta a esa necesidad un espacio digital donde la memoria de cada festival quede registrada y disponible para todos. Así, buscamos que la tradición gastronómica no solo se mantenga viva, sino que también llegue a más personas dentro y fuera de la región.</p>
+                        </div>  
+                        <img src="../public/img/AboutUs/recursos_aboutus/PIZZA_LABEL.png" 
+                             alt="pizza" 
+                             class="imagen_pizza"
+                             loading="lazy">
                     </div>
-                </section>
+                </div>
 
+                <!-- ===== BLOQUE 2 ===== -->
+                <div class="bloque bloque-derecha">
+                    <!-- Tarjeta verde -->
+                    <div class="tarjeta">
+                        <div class="infoverde">
+                            <h3>IMPORTANCIA</h3>
+                            <p class="pverde">Desde sus inicios, los festivales gastronómicos han sido más que un encuentro de sabores: son el reflejo de nuestra identidad, de los saberes ancestrales y de la unión de nuestra comunidad. Sin embargo, la falta de un lugar que centralice toda la información hacía que muchos de estos recuerdos se perdieran</p>
+                        </div> 
+                        <img src="../public/img/AboutUs/recursos_aboutus/TORTA_LABEL.png" 
+                             alt="torta" 
+                             class="imagen_torta"
+                             loading="lazy">
+                    </div>
+                </div>
 
-    
+                <!-- ===== BLOQUE 3 ===== -->
+                <div class="bloque bloque-izquierda2">
+                    <!-- Tarjeta azul -->
+                    <div class="tarjeta">
+                        <div class="infoazul">
+                            <h3 class="h3azul">CENTRALIZACION</h3>
+                            <p>Conscientes de la importancia de la tradición gastronómica de nuestro municipio, decidimos crear una plataforma digital que conserve la memoria de los festivales y la ponga al alcance de todos. Lo que antes estaba disperso en afiches, notas o recuerdos aislados, ahora se integra en un solo espacio accesible y actualizado.</p>
+                        </div>                         
+                        <img src="../public/img/AboutUs/recursos_aboutus/BURGER_LABEL.png" 
+                             alt="hamburguesa" 
+                             class="imagen_burguer"
+                             loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
 <!-- ========================= FOOTER ========================= -->
 <footer class="main-footer">
     <div class="footer-container">
         <div class="footer-column-left">
             <div class="logo-group">
-                <img src="../public/img/Logo/Horizontal_Color.svg" alt="Escudo Alcaldía de Zipaquirá" class="footer-logo">
+                <img src="../public/img/Logo/Horizontal_Color.svg" 
+                     alt="Escudo Alcaldía de Zipaquirá" 
+                     class="footer-logo">
             </div>
             <div class="contact-info">
                 <h4>Punto de Información Turística</h4>
@@ -124,8 +140,8 @@
                 <p>10:00 a.m. a 2:00 p.m.</p>
                 <p class="copyright">Copyright © 2025</p>
             </div>
-            
         </div>
+        
         <div class="footer-column-center">
             <div class="divider"></div>
             <nav class="footer-nav">
@@ -137,13 +153,19 @@
                 </ul>
             </nav>
         </div>
+        
         <div class="footer-column-right">
-            <img src="../public/img/Logo/Negativo.svg" alt="Logo de Alcaldía de Zipaquirá" class="alcaldia-logo-big">
+            <img src="../public/img/Logo/Negativo.svg" 
+                 alt="Logo de Alcaldía de Zipaquirá" 
+                 class="alcaldia-logo-big">
             <div class="divider"></div>
         </div>
     </div>
 </footer> 
 <!-- ======================= END FOOTER ======================= -->
-    <script src="../model/header.js" defer></script>
-    </body>
+
+<!-- JavaScript Files -->
+<script src="../model/header.js" defer></script>
+<script src="../model/script.js"></script>
+</body>
 </html>

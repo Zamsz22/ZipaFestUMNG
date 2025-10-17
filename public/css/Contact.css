@@ -4,64 +4,122 @@
 @import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ranchers&family=Slackey&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ranchers&family=Slackey&family=Smooch&display=swap);
 
-:root{
-  --bg: #ffffff;
-  --ink: #0f0f0f;
-  --muted: #7f8183;
-  --panel-shadow: 0 16px 28px rgba(0,0,0,.12);
-  --card-bg: #0f2224;  /* oscuro verdoso */
-  --accent: #e5bb2f;   /* franja amarilla */
-  --maxw: 1100px;
-}
-
-
 
 /* ====== Sección ====== */
-.contacto{
-  padding: 210px ;
+.contacto {
+  overflow-x: hidden;
+  position: relative;
+  overflow: visible;
+  /* espacio seguro por header fijo */
+  padding: clamp(140px, 16vh, 220px) 16px;
+  display: grid;
 }
+
+/* ====== PAPEL CSS (sin imagen) ====== */
+.contacto-fondo{
+  --paper: var(--color-text-light);                 /* color base del papel */
+  --grain1: rgba(0,0,0,.018);       /* grano leve */
+  --grain2: rgba(0,0,0,.028);
+  --shadow: 0 28px 50px rgba(0,0,0,.18);
+
+  position: absolute;
+  z-index: 1;
+
+  /* márgenes laterales fluidos y alto elástico */
+  left:  max(80px, 20%);
+  right: max(80px,20%);
+  top: clamp(180px, 50vh, 120px);
+  bottom: clamp(40px, 10vh, 120px);
+  
+
+  /* textura suave (sin imágenes) */
+
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  background-color: var(--color-text-light);
+}
+
+/* Cinta adhesiva superior */
+.contacto-fondo::before{
+  content:"";
+  position:absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2.5deg);
+  width: clamp(160px, 22vw, 320px);
+  height: 48px;
+  background: #d9cfb8;
+  box-shadow: 0 8px 18px rgba(0,0,0,.18);
+  border-radius: 6px;
+}
+
+/* Zig-zag inferior con máscara SVG */
+.contacto-fondo::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:-36px;
+  height: 110px;
+  background: var(--paper);
+  filter: drop-shadow(0 22px 24px rgba(0,0,0,.25));
+  -webkit-mask: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'>\
+    <path d='M0,0 H100 V20 L95,16 90,20 85,16 80,20 75,16 70,20 65,16 60,20 55,16 50,20 45,16 40,20 35,16 30,20 25,16 20,20 15,16 10,20 5,16 0,20 Z' fill='black'/>\
+  </svg>") bottom / 100% 100% no-repeat;
+          mask: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'>\
+    <path d='M0,0 H100 V20 L95,16 90,20 85,16 80,20 75,16 70,20 65,16 60,20 55,16 50,20 45,16 40,20 35,16 30,20 25,16 20,20 15,16 10,20 5,16 0,20 Z' fill='black'/>\
+  </svg>") bottom / 100% 100% no-repeat;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+
 .contacto__panel{
+  position: relative;
+  z-index: 3;              
   max-width: 1300px;
   margin: 0 auto;
-  background: var(--bg);
-  border-radius: 10px;
-  box-shadow: var(--panel-shadow);
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 24px;
-  padding: 44px 40px 36px;
-  position: relative;
-  overflow: hidden; /* para la sombra pero permitimos pizza encima con z-index */
+  grid-template-columns: minmax(320px, 1fr) minmax(300px, .9fr);
+  gap: clamp(18px, 3vw, 36px);
+  padding: clamp(100px, 3vw, 36px) clamp(20px, 5vw, 60px) clamp(28px, 6vw, 72px);
 }
 
 /* ====== Columna izquierda ====== */
 .contacto__left{ position: relative; z-index: 1; }
 
 .contacto__title{
-  font-family: 'Ranchers', sans-serif;
-  margin: 0 0 18px;
+  font-family: 'BBH Sans Hegarty', sans-serif;
+  margin: 0 0 22px;
   line-height: .9;
-  letter-spacing: .5px;
-}
-.contacto__title span{
-  font-family: 'Ranchers', sans-serif;
-  display: block;
-  font-weight: 900;
-  font-size: clamp(36px, 7vw, 64px);
+  letter-spacing: .9px;
+  color: #51060b;
 }
 
+.contacto__title span{
+  font-family: 'BBH Sans Hegarty', sans-serif;
+  display: block;
+  font-weight: 900;
+  font-size: clamp(36px, 6vw, 56px);
+}
+
+/* Ajustes para que el form no se salga del papel */
 .contacto__form{
-  font-family: 'Jane Regular W00 Regular',sans-serif;
+  margin-left: 0;
+  font-family: 'Montserrat', sans-serif;
   display: grid;
-  gap: 22px;
-  max-width: 460px;
+  gap: 18px;
+  width: 100%;
+  max-width: 560px;
 }
 
 .input{ display: grid; gap: 8px; }
+
 .input > span{
   font-size: 14px;
   color: #333;
 }
+
 .input input,
 .input textarea{
   border: none;
@@ -71,19 +129,17 @@
   font-size: 15px;
   background: transparent;
   min-height: 50px;
-  max-width: 400px;
-  width: 400px;
-  min-width: 400px;
+  width: 100%;
+  max-width: none;   /* sin límite de 400px */
 }
+
 .input input:focus,
-.input textarea:focus{
-  border-bottom-color: #222;
-}
+.input textarea:focus{ border-bottom-color: #222; }
 
 .btn{
   margin-top: 8px;
-  margin-left: 85px;
-  width: 180px;
+  margin-left: 0;           /* sin desplazamiento lateral */
+  width: clamp(160px, 32%, 200px);
   justify-self: start;
   background: #000;
   color: #fff;
@@ -94,77 +150,81 @@
   letter-spacing: .6px;
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(0,0,0,.15);
+  transition: opacity 0.3s ease, transform .16s ease;
 }
-.btn:hover{ opacity:.92; }
+.btn:hover{ opacity:.92; transform: translateY(-1px); }
 
 /* ====== Columna derecha ====== */
 .contacto__right{
   position: relative;
+  left: 0;                  /* elimina offset que sacaba del papel */
   min-height: 320px;
 }
 
-/* Franja amarilla del lado derecho */
-.contacto__stripe{
+.bg-grid{
   position: absolute;
-  top: -44px;
-  right: -40px;
-  width: 180px;
-  height: calc(100% + 88px);
-  background: var(--accent);
-  z-index: 0;
+  right: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: url(/public/img/Categories/bg.png);
+  z-index: -50;
+  filter: blur(0.8px) brightness(1.8) opacity(40%);
 }
 
 /* Pizza superpuesta */
 .contacto__pizza{
   position: absolute;
-  top: -45px;
-  left: -25px;
-  width: 200px;
+  top: -10px;
+  left: 240px;
+  width: clamp(140px, 22vw, 220px);
   height: auto;
-  transform: rotate(-12deg);
+  transform: rotate(15deg);
   z-index: 2;
   filter: drop-shadow(0 10px 18px rgba(0,0,0,.25));
 }
 
-/* Tarjeta de información */
+/* Tarjeta de información (dentro del papel) */
 .card{
-  position: relative;
+  position: relative;      /* deja de ser absoluta con right negativo */
   z-index: 1;
-  margin-top: 56px;
-  margin-left: 70px; /* deja curvatura visual como en maqueta */
-  background: var(--card-bg);
+  width: min(560px, 100%);
+  margin: clamp(48px, 7vw, 90px) 0 0 auto;  /* se alinea a la derecha en desktop */
+  background:#0A6332;
   color: #e7f0ef;
-  border-radius: 8px;
-  padding: 28px 32px 24px;
+  border-radius: 10px;
+  padding: clamp(18px, 2.2vw, 28px);
   box-shadow: 0 14px 24px rgba(0,0,0,.25);
-  max-width: 460px;
 }
+
 .card h3{
   margin: 0 0 14px;
-  font-size: 18px;
+  font-size: clamp(16px, 1.6vw, 18px);
   font-weight: 600;
 }
+
 .card p{
   margin: 8px 0;
-  font-size: 14px;
+  font-size: clamp(13px, 1.4vw, 14px);
   line-height: 1.55;
   color: #cfe3e1;
 }
-.card a{ color: #d7ffff; text-decoration: none; }
+
+.card a{ color: #d7ffff; text-decoration: none; transition: text-decoration 0.2s ease; }
 .card a:hover{ text-decoration: underline; }
 
+/* Redes (dentro del papel) */
 .social{
-  position: absolute;
+  position: relative;
   z-index: 2;
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 15px;
-  margin-top: 50px;
-  margin-left: 50px;        
-  width: 100%;              
-  box-sizing: border-box;
-  pointer-events: auto;    
+  margin-top: 14px;
+  pointer-events: auto;
+  justify-content: center;
 }
 
 .social a {
@@ -173,8 +233,8 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  background-color: var(--color-secondary);      
-  color: var(--color-text-light);                 
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
   border-radius: 50%;
   text-align: center;
   font-size: 18px;
@@ -182,32 +242,160 @@
   transition: transform 220ms ease, background-color 220ms ease;
   box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
-
 .social a:hover {
-    background-color:var(--color-hover-success);
-    transform: translateY(-10px) scale(1.2);
-    transition: .3s ease;
+  background-color:#0A6332;
+  transform: translateY(-6px) scale(1.08);
+  transition: .3s ease;
 }
 
-/* ====== Responsive básico ====== */
+/* ====== RESPONSIVE TABLETS (<= 1200px) ====== */
+@media (max-width: 1800px) and (min-width: 981px){
+  .card{ margin-top: 72px; }
+
+  .contacto-fondo {
+    left: max(20px, 5%);   /* reduce los márgenes laterales → más ancho */
+    right: max(20px, 5%);
+    top: clamp(220px, 40vh, 80px);   /* sube un poco para ocupar más alto */
+    bottom: clamp(20px, 8vh, 80px);
+  }
+
+  .contacto-fondo::before {
+    width: clamp(200px, 30vw, 360px); /* cinta un poco más ancha */
+    height: 54px;                     /* cinta un poco más grande */
+  }
+
+  .contacto-fondo::after {
+    height: 130px; /* agranda el zigzag inferior */
+  }
+
+  .contacto__panel{
+    top: 80px;
+  }
+}
+
+/* ====== RESPONSIVE (<= 980px) ====== */
 @media (max-width: 980px){
+  .contacto-fondo{
+    top: clamp(150px, 9vh, 110px);
+    bottom: clamp(60px, 14vh, 140px); /* papel más alto para apilar contenido */
+  }
+
   .contacto__panel{
     grid-template-columns: 1fr;
-    padding: 36px 28px 28px;
+    padding: clamp(18px,3.5vw,28px);
+    gap: 28px;
+    max-width: 1000px;
   }
+
+  .contacto{
+    padding-top: 200px;
+  }
+
+  .contacto__left{ order: 1; }
+  .contacto__right{ order: 2; min-height: unset; }
+
+  .contacto__title{
+    margin: 0 0 20px;
+  }
+
   .contacto__pizza{
-    left: auto; right: 24px; top: -10px; transform: rotate(-8deg);
+    position: absolute;
+    top: -40px; left: 240px;
+    transform: rotate(15deg);
+    margin-bottom: 6px;
+    width: clamp(150px, 34vw, 200px);
   }
-  .card{ margin: 72px 0 0 auto; }
-  .contacto__stripe{
-    right: -28px; width: 150px;
-    height: calc(100% + 72px);
+
+  .card{
+    margin: 10px 0 0 0;      /* tarjeta debajo del form y dentro del papel */
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .social{
+    margin: 10px 0 0 0;
+    justify-content: flex-start;
+  }
+
+  .btn{
+    width: 100%;
+    justify-self: stretch;
   }
 }
 
+/* ====== RESPONSIVE MÓVILES (<= 768px) ====== */
+@media (max-width: 768px){
+      .contacto-fondo {
+    left: max(70px, 5%);   /* reduce los márgenes laterales → más ancho */
+    right: max(20px, 5%);
+    top: clamp(200px, 40vh, 80px);   /* sube un poco para ocupar más alto */
+    bottom: clamp(20px, 8vh, 80px);
+  }
+  .contacto {
+    padding: clamp(300px, 15vh, 160px) 12px;
+  }
+
+  .contacto__panel{ padding: 22px 16px 28px; }
+
+  .contacto__title span{ font-size: clamp(32px, 7vw, 40px); }
+
+  .contacto__form{ max-width: 100%; }
+  .input input, .input textarea{ width: 100%; max-width: none; font-size: 14px; min-height: 45px; }
+
+  .card{ padding: 20px; margin-top: 12px; }
+  .card h3{ font-size: 16px; }
+  .card p{ font-size: 13px; }
+
+  .social{ gap: 12px; }
+  .social a{ width: 40px; height: 40px; font-size: 16px; }
+}
+@media (max-width: 725px) and (min-width: 561px){
+    .contacto-fondo {
+    left: max(70px, 5%);   /* reduce los márgenes laterales → más ancho */
+    right: max(20px, 5%);
+    top: clamp(190px, 40vh, 80px);   /* sube un poco para ocupar más alto */
+    bottom: clamp(20px, 8vh, 80px);
+  }
+  
+  .contacto__pizza{
+    left: 230px;
+  }
+
+  .contacto {
+    padding: clamp(250px, 15vh, 160px) 12px;
+  }
+
+  .contacto__panel{ padding: 22px 8px 28px; 
+  
+  }
+
+  .contacto__title span{ font-size: clamp(32px, 7vw, 40px); }
+
+  .contacto__form{ max-width: 100%; }
+  .input input, .input textarea{ width: 100%; max-width: none; font-size: 14px; min-height: 45px; }
+
+  .card{ padding: 20px; margin-top: 12px; }
+  .card h3{ font-size: 16px; }
+  .card p{ font-size: 13px; }
+
+  .social{ gap: 12px; }
+  .social a{ width: 40px; height: 40px; font-size: 16px; }
+  
+
+}
+/* ====== RESPONSIVE MÓVILES PEQUEÑOS (<= 560px) ====== */
 @media (max-width: 560px){
-  .btn{ width: 100%; justify-self: stretch; }
-  .card{ margin-left: 0; }
-  .contacto__pizza{ width: 160px; right: 10px; }
-  .social{ right: 6px; bottom: 6px; }
+  .contacto__panel{ padding: 18px 12px 24px; }
+  .contacto__pizza{left: 240px;}
+  .btn{ padding: 12px 20px; }
+  .card{ border-radius: 8px; }
+}
+
+/* ====== EXTRA PEQUEÑO (<= 375px) ====== */
+@media (max-width: 375px){
+  .contacto__pizza{left: 180px;}
+  .contacto { padding: 230px 8px 56px; }
+  .card h3{ font-size: 14px; }
+  .card p{ font-size: 12px; }
+  .social a{ width: 36px; height: 36px; font-size: 14px; }
 }

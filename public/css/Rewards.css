@@ -1,119 +1,176 @@
-/* PÁGINA DE CUPONES */
+/* ===============================
+   PÁGINA DE CUPONES - ZipaFest
+   =============================== */
+.cupons {
+  background-color: #FFF7ED;
+}
+
+.bg-grid {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: url(/public/img/Categories/bg.png);
+  z-index: -50;
+  filter: blur(0.8px) brightness(1.8) opacity(40%);
+  top: 0;
+}
+
 .coupons-main {
-    text-align: center;
-    height: 930px;
-    padding-top: 200px;
-    margin-left: 250px;
-    margin-right: 250px;
+  text-align: center;
+  min-height: 930px;
+  padding-top: 200px;
+  margin: 0 auto;
+  max-width: 1400px; /* ✅ evita márgenes fijos */
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .page-title {
-    z-index: -1000;
-    font-family: 'Ranchers';
-    font-size: 100PX;
-    font-weight: bold;
-    color: var(--color-text-dark);
-    margin-bottom: 50px;
-    position: relative;
-    display: inline-block;
+  font-family: 'BBH Sans Hegarty', sans-serif;
+  font-size: 100px;
+  font-weight: bold;
+  color: #51060B;
+  margin-bottom: 0px;
+  position: relative;
+  display: inline-block;
 }
 
-.page-title::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 4px;
-    background-color: var(--color-text-dark);
-    margin-top: 5px;
+/* ===============================
+   LINEA
+   =============================== */
+.linea {
+  margin-top: 130px;
+  right: 0%;
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background-color: #51060B;
 }
 
+/* ===============================
+   GRID DE CUPONES
+   =============================== */
 .coupons-grid {
-display: grid;
-justify-items: center;
-grid-template-columns: repeat(4,1fr);
-padding: 0;
-position: relative;
-
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+  justify-items: center;
+  padding-top: 0px;
 }
 
-.coupons-grid::after, .coupons-grid::before ,.coupons-grid .divider-line {
-    content: '';
-    display: block;
-    position: absolute;
-    border-left: 2px dashed #7f8183;
-    height: 350px;
-    right: 25%;
-    top: 0;
-    z-index: -1;
-}
-
-.coupons-grid::before {
-     border-left: 2px dashed #7f8183;
-    left: 25%;
-}
-.coupons-grid .divider-line {
-    border-left: 2px dashed #7f8183;
-    left: 50%;
-}
-.coupons-grid::after {
-    border-left: 2px dashed #7f8183;
-    left: 75%;
-}
-
+/* ===============================
+   TARJETA INDIVIDUAL
+   =============================== */
 .coupon-card {
-text-decoration: none;
-max-width: 260px;
-color: inherit;
-width: 250px;
-border-radius: 10px;
-overflow: hidden;
-transition: transform 0.3s ease;
-position: relative; 
+  position: relative;
+  width: 100%;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  color: inherit;
+  background-image: url('../img/Cupones/recurso_cupones/tarjeta.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  padding-top: 120px;
+  box-sizing: border-box;
+  overflow: visible;
+  transition: transform 0.5s ease;
 }
 
 .coupon-card:hover {
-    transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.05);
+  transition: transform 0.5s ease;
+  filter: drop-shadow(-6px 0px 0 #ffffff) drop-shadow(6px 0px 0 #ffffff)
+    drop-shadow(0px 6px 0 #ffffff) drop-shadow(0px -6px 0 #ffffff);
 }
 
-.coupon-card img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
+.coupon-card-det:hover {
+  filter: drop-shadow(-3px -3px 8px #421a1a25)
+    drop-shadow(3px 3px 8px #421a1a28);
 }
 
+/* ===============================
+   INFORMACIÓN DEL CUPÓN
+   =============================== */
 .coupon-info {
-    padding: 15px;
+  width: 80%;
+  text-align: center;
+  color: #fff0d6;
+  margin-top: 35px;
+  margin-bottom: 20px;
 }
 
-#burguer{
-    font-size: 19px;
+#burguer {
+  font-size: 19px;
 }
 
 .coupon-info h3 {
-    margin: 0 0 5px;
-    font-size: 22px;
-    text-align: left;
-    font-family: 'Nohemi';
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Nohemi', sans-serif;
 }
 
 .coupon-info p {
-    margin: 0 0 10px;
-    font-size: 16px;
-    color: var(--color-text-muted);
-    height: 40px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: left;
+  padding-left: 7px;
+  margin: 0 15px 8px;
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 35;
+  color: #fff0d6;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .ver-mas {
-    color: var(--color-primary);
-    font-weight: bold;
-    text-align: center;
-    text-decoration: underline;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: underline;
+  color: #fff0d6;
+  font-family: 'Montserrat', sans-serif;
 }
 
-/* ESTILOS DEL POP-UP (MODAL) */
+
+
+/* ===============================
+   IMÁGENES
+   =============================== */
+.food-img-burger {
+  height: 40%;
+  position: absolute;
+  margin-top: 135px;
+}
+
+.food-img-pizza {
+  height: 60%;
+  position: absolute;
+  margin-top: 90px;
+}
+
+.food-img-empanada {
+  height: 40%;
+  position: absolute;
+  margin-top: 135px;
+}
+
+.food-img-cafe {
+  height: 42%;
+  margin-top: 140px;
+  position: absolute;
+}
+
+/* ===============================
+   POPUP / MODAL DE CUPONES
+   =============================== */
+
 .popup-container {
     z-index: 1000;
     position: fixed;
@@ -130,14 +187,15 @@ position: relative;
     transition: opacity 0.3s, visibility 0.3s;
 }
 
-.popup-container:target {
+/* Cambia :target por .visible */
+.popup-container.visible {
     opacity: 1;
     visibility: visible;
 }
 
 .popup-content {
     z-index: 1000;
-    background-color: var(--color-background);
+    background-color: #fff0d6;
     color: var(--color-text-dark);
     width: 280px;
     border-radius: 20px;
@@ -145,10 +203,18 @@ position: relative;
     padding-top: 10px;
     text-align: center;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    /* Añadimos una transición para un efecto más suave */
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto de escala al aparecer el popup */
+.popup-container.visible .popup-content {
+    transform: scale(1);
 }
 
 .popup-header h2 {
-    font-family: 'Nohemi';
+    font-family: 'Nohemi', sans-serif;
     font-size: 40px;
     color: var(--color-text-dark);
 }
@@ -160,16 +226,16 @@ position: relative;
 }
 
 .popup-body p {
-    font-family: 'Jane Regular W00 Regular',sans-serif;
+    font-family: 'Montserrat', sans-serif;;
     text-align: left;
     padding: 0 20px;
-    font-size: 14px;
+    font-size: 12px;
     color: var(--color-text-dark);
-    margin-bottom: 20px ;
+    margin-bottom: 20px;
 }
 
 .popup-footer {
-    background-color: var(--color-accent-secondary);
+    background-color: #51060B;
     padding: 20px;
     padding-top: 3px;
     border-bottom-left-radius: 20px;
@@ -178,16 +244,31 @@ position: relative;
 }
 
 .redeem-btn {
-    font-family: 'Jane Regular W00 Regular',sans-serif;
+    font-family: 'Montserrat', sans-serif;;
     background-color: var(--color-secondary);
     color: var(--color-text-light);
     border: none;
     padding: 12px 30px;
     border-radius: 50px;
-    font-size: 18px;
+    font-size: 15px;
     cursor: pointer;
     font-weight: bold;
 }
+
+/* Estilo para el botón de cierre */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    color: #51060B;
+    text-decoration: none;
+    line-height: 1;
+}
+
+/* ===============================
+   TEXTO FINAL DEL POPUP
+   =============================== */
 
 .sold-most {
     text-align: left;
@@ -196,16 +277,16 @@ position: relative;
 }
 
 .sold-most-text {
-    font-family: 'Slackey';
+    font-family: 'Slackey', cursive;
     font-size: 13px;
-    color: var(--color-text-dark);
+    color: #fff0d6;
     display: block;
     transform: rotate(-8deg);
     padding-bottom: 3px;
 }
 
 .sold-most-text2 {
-    font-family: 'Slackey';
+    font-family: 'Slackey', cursive;
     font-size: 20px;
     color: var(--color-accent-primary);
 }
@@ -214,6 +295,261 @@ position: relative;
     text-align: left;
     font-size: 12px;
     margin: 5px 0 0;
-    color: var(--color-text-muted);
+    color: #fff0d6;
     font-weight: normal;
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+} 
+
+/* ===============================
+   RESPONSIVE DESIGN
+   =============================== */
+
+/* 💻 Tablets (max-width: 1024px) */
+
+
+
+@media (max-width: 1300px) {
+  .coupons-main {
+    padding-top: 150px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .page-title {
+    font-size: 70px;
+  }
+
+  .linea {
+    margin-top: 90px;
+    height: 12px;
+  }
+
+  .coupons-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .coupon-card {
+    height: 480px;
+    background-size: contain;
+  }
+
+    .coupon-info{
+    width: 300px;
+  }
+
+   .coupon-info p {
+    padding: 10px 14px 0px 50px;
+  }
+
+  #pburger{
+    padding: 5px 25px 0px 47px;
+  }
+
+.bg-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/public/img/Categories/bg.png");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
+  z-index: -50;
+  filter: blur(0.8px) brightness(1.8) opacity(40%);
+}
+
+  .food-img-burger {
+    position: relative;
+    margin-top: -10px;
+    height: 200px;
+  }
+
+  .food-img-cafe{
+    position: relative;
+    margin-top: -15px;
+    height: 200px;
+  }
+
+     .food-img-empanada{
+    position: relative;
+    margin-top: -12px;
+    height: 200px;
+  }
+
+  .coupons-main{
+    margin-bottom: 100px;
+  }
+
+}
+
+/* 📱 Móviles (max-width: 768px) */
+@media (max-width: 768px) {
+  .coupons-main {
+    padding-top: 120px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .page-title {
+    margin-top: 70px;
+    font-size: 70px;
+  }
+
+  .linea {
+   opacity: 0%;
+  }
+
+  .coupons-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .coupon-card {
+    height: 600px;
+    background-size: contain;
+  }
+
+  .coupon-info{
+    width: 400px;
+    height: 60px;
+  }
+  
+  .coupon-info h3 {
+    margin-top: 2px;
+    font-size: 25px;
+  }
+
+  .coupon-info p {
+    padding-right: 40px ;
+    font-size: 15px;
+    text-align: center;
+  }
+  #pburger{
+    padding: 5px 40px 0px 47px;
+  }
+
+
+  .ver-mas {
+    position: relative;
+    top: 30px;
+  }
+
+  .food-img-burger {
+    position: relative;
+    margin-top: 70px;
+    height: 250px;
+  }
+
+  .food-img-cafe{
+    position: relative;
+    margin-top: 65px;
+    height: 250px;
+  }
+
+    .food-img-pizza{
+    position: relative;
+    margin-top: 23px;
+    height: 340px;
+  }
+
+   .food-img-empanada{
+    position: relative;
+    margin-top: 60px;
+    height: 250px;
+  }
+
+  footer .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .header-right {
+    display: none; /* ✅ evita que el header se corte */
+  }
+
+    .coupons-main{
+    margin-bottom: 100px;
+  }
+}
+
+/* 📱 Pequeños móviles (max-width: 480px) */
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 46px;
+  }
+
+  .linea {
+    height: 8px;
+  }
+
+  .coupon-card {
+    height: 380px;
+  }
+
+  .popup-content {
+    width: 90%;
+  }
+
+    .coupon-info{
+    transform: translateY(-40px);
+    width: 200px;
+    height: 10px;
+  }
+
+   .coupon-info h3 {
+    margin-top: 0px;
+    font-size: 20px;
+  }
+  
+    .coupon-info p {
+    padding-right: 0px ;
+    font-size: 0px;
+    text-align: center;
+  }
+
+    .ver-mas {
+    position: relative;
+    top: 0px;
+  }
+  
+    .food-img-burger {
+    position: relative;
+    margin-top: 10px;
+    height: 150px;
+  }
+
+  .food-img-cafe{
+    position: relative;
+    margin-top: 10px;
+    height: 150px;
+  }
+
+    .food-img-pizza{
+    position: relative;
+    margin-top: -20px;
+    height: 200px;
+  }
+
+   .food-img-empanada{
+    position: relative;
+    margin-top: 10px;
+    height: 150px;
+  }
+  
+    .coupons-main{
+    margin-bottom: 100px;
+  }
+
 }

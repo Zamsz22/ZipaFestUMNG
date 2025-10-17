@@ -7,98 +7,174 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
-    
+     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.52/build/spline-viewer.js"></script> 
 </head>
 <body>
+  <style>
+    header{
+      background:transparent;
+    }
+  </style>
 
 <!-- ========================= HEADER ========================= -->
 <header>
      <a href="../public/index.html" class="header-logo"><img src="img/Logo/Negativo.svg" alt="ZipaFest Logo"></a>
-     <ul class="nav-links">
-        <li class="category">
-            <a href="#categories">CATEGORÍAS
+
+     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+
+     <ul class="nav-links" id="navLinks">
+        <li class="category" id="categoryMenu">
+            <a href="#categories" class="categoryName" >CATEGORIAS
                 <span class="material-icons dropdown-icon">
                     expand_more
                 </span>
             </a>
             <ul class="drop-down">
-                <li><a href="/view/Burger.html">BURGER FEST</a></li>
-                <li><a href="/view/Cake.html">TORTA FEST</a></li>
-                <li><a href="/view/Pizza.html">PIZZA FEST</a></li>
-                <li><a href="/view/Empanada.html">EMPANADA FEST</a></li>
-                <li><a href="/view/Coffee.html">COFFEE MASTER</a></li>
+                <li><a href="../view/Burger.html">BURGER FEST</a></li>
+                <li><a href="../view/Cake.html">TORTA FEST</a></li>
+                <li><a href="../view/Pizza.html">PIZZA FEST</a></li>
+                <li><a href="../view/Empanada.html">EMPANADA FEST</a></li>
+                <li><a href="../view/Coffee.html">COFFEE MASTER</a></li>
             </ul>
         </li>
         <li> <a href="../view/Rewards.html">CUPONES</a></li>
         <li> <a href="../view/AboutUs.html">SOBRE NOSOTROS</a></li>
-    </ul>
-    
-    <div class="header-right">
-        <a href="../view/Contact.html" class="contact-link">. CONTACTANOS .</a>
-        <a href="" class="login-button">INGRESAR</a>
+        <div class="header-right">
+        <a href="../view/Contact.html" class="contact-link">CONTACTANOS</a>
+        <a href="../view/loader.html" class="login-button">INGRESAR</a>
     </div>
+        
+    </ul>
+     
+   
+
+    <div class="nav-overlay" id="navOverlay"></div>
 </header>
 <!-- ======================= END HEADER ======================= -->
 
 <main>  
     <!-- ======================= HERO SLIDER SECTION ======================= -->
-    <section class="hero-section">
-        <div class="hero-container">
-            <div class="hero-slider">
-                <ul>
-                <li><img src="img/BannerSlider/Banner_1 1.png" alt="Imagen de BurgerFest"></li>
-                <li><img src="img/BannerSlider/Banner_2 1.png" alt="Imagen de BurgerFest"></li>
-                <li><img src="img/BannerSlider/Banner_3 1.png" alt="Imagen de BurgerFest"></li>
-                </ul>
-            </div>
-        </div>
-    </section>
+<section class="hero-section">
+  <div class="hero-container">
+    <div class="hero-slider">
+        <div class="slide-image-bg scroll-reveal" data-delay="200">
+            <img src="/public/img/BannerSlider/verduras3.png" alt="">
+          </div>
+      <ul>
+        <li class="slide">
+          <div class="slide-text scroll-reveal" data-delay="600">
+            <h2>BURGER MASTER</h2>
+            <p>
+              El Burger Fest es un evento culinario que celebra la diversidad y creatividad 
+              en el mundo de las hamburguesas. Durante este festival, los amantes de las 
+              hamburguesas pueden disfrutar de una amplia variedad de opciones gastronómicas.
+            </p>
+          </div>
+          <div class="slide-image scroll-reveal" data-delay="400">
+            <img src="/public/img/BannerSlider/BurguerMaster.png" alt="Burger Master">
+          </div>
+           
+        </li>
+
+        <li class="slide">
+          <div class="slide-text scroll-reveal" data-delay="100">
+            <h2>COFFEE MASTER</h2>
+            <p>
+              El Coffee Master es un evento especial que honra la técnica y el arte
+en el mundo del café. Durante este encuentro, los amantes del café
+pueden disfrutar de distintas preparaciones y aromas excepcionales.
+            </p>
+           
+          </div>
+          <div class="slide-image img-cafe scroll-reveal" data-delay="1">
+            <img src="/public/img/BannerSlider/cafe_fly@3x.png" alt="Burger Master">
+          </div>
+          
+        </li>
+
+        <li class="slide">
+          <div class="slide-text img-cafe scroll-reveal" data-delay="50">
+            <h2>PIZZA FEST</h2>
+            <p>
+              El Pizza Fest es un evento gastronómico que celebra la pasión y originalidad
+en el mundo de las pizzas. Durante este festival, los fanáticos de la
+pizza pueden disfrutar de una gran variedad de sabores y combinaciones únicas.
+            </p>
+          </div>
+          <div class="slide-image img-pizza scroll-reveal" data-delay="1">
+            <img src="/public/img/BannerSlider/Pizza_fly.png" alt="Burger Master">
+          </div>
+        </li>
+      </ul>
+
+      <!-- Botones -->
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+      
+    </div>
+  </div>
+  <div class="bg-grid"></div>
+</section>
+
     <!-- ===================== END HERO SLIDER SECTION ===================== -->
 
     <!-- ===================== CATEGORIES SECTION ===================== -->
     <section class="categories-section" id="categories">
-        <div class="categories-container">
-            <h2 class="section-title">CATEGORÍAS</h2>
-            <div class="categories-grid">
-                <div class="category-item item-burger">
-                    <a href="../view/Burger.html">
-                        <img src="img/Categories/category_1.png" alt="Hamburguesa">
-                        <p>BURGER FEST</p>
-                    </a>
-                </div>
-                <div class="category-item item-coffee">
-                    <a href="../view/Coffee.html">
-                        <img src="img/Categories/category_2.png" alt="Café helado">
-                        <p>COFFEE MASTER</p>
-                    </a>
-                </div>
-                <div class="category-item item-torta">
-                    <a href="../view/Cake.html">
-                        <img src="img/Categories/category_4.png" alt="Cupcake de Ferrero">
-                        <p>TORTA FEST</p>
-                    </a>
-                </div>
-                <div class="category-item item-empanada">
-                    <a href="../view/Empanada.html">
-                        <img src="img/Categories/category_3.png" alt="Empanada">
-                        <p>EMPANADA FEST</p>
-                    </a>
-                </div>
-                <div class="category-item item-pizza">
-                    <a href="../view/Pizza.html">
-                        <img src="img/Categories/category_5.png" alt="Pizza">
-                        <p>PIZZA FEST</p>
-                    </a>
-                </div> 
-            </div>
-            <div class="category-center-text">
-                <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.52/build/spline-viewer.js"></script>
-<spline-viewer url="https://prod.spline.design/ToNgK5APL85noPPi/scene.splinecode"></spline-viewer>
-            </div>
-            <img src="img/Categories/sal_decoration.png" alt="" class="cta-deco cta-deco-right">
+       
+        <div class="section-title">
+            <h2 class="section-title scroll-reveal" data-delay="200">CATEGORIAS</h2>
         </div>
-    </section>
+  <div class="categories-grid">
+     
+    <div class="category-item item-burger">
+        <a href="/view/Burger.html">
+      <img src="/public/img/Categories/category_1.png" alt="Burger Fest">
+      <p>Burger Master</p>
+      </a>
+    </div>
+
+    <div class="category-item item-coffee">
+        <a href="/view/Coffee.html">
+      <img src="/public/img/Categories/category_2.png" alt="Coffee Master">
+      <p>Coffee Master</p>
+      </a>
+    </div>
+
+    <div class="category-item item-torta">
+        <a href="/view/Cake.html">
+      <img src="/public/img/Categories/category_4.png" alt="Torta Fest">
+      <p>Torta Fest</p>
+      </a>
+    </div>
+
+    <div class="category-item item-empanada">
+        <a href="/view/Empanada.html">
+      <img src="/public/img/Categories/empanadas.png" alt="Empanada Fest" style="padding-bottom: 20px;">
+      <p>Empanada Fest</p>
+      </a>
+    </div>
+
+    <div class="category-item item-pizza">
+        <a href="/view/Pizza.html">
+      <img src="/public/img/Categories/category_5.png" alt="Pizza Fest" id="category-border">
+      <p>Pizza Fest</p>
+      </a>
+    </div>
+
+    <div class="category-center-text">
+        
+         <spline-viewer url="https://prod.spline.design/yfAXxOHQHF6RLDBA/scene.splinecode"></spline-viewer>
+         </div> 
+         
+        </div>
+        <div class="bg-grid"></div>
+</section>
+
     <!-- =================== END CATEGORIES SECTION =================== -->
 
     <!-- ======================= BANNER SECTION ======================= -->
@@ -106,72 +182,100 @@
         <div class="banner-container">
             <div class="banner">
                 <img src="../public/img/Banner/bannerburger.png" alt="" class="cta-burger cta-burger-left">
-                <img src="../public/img/Banner/bannerburger.png" alt="" class="cta-burger cta-burger-right">
-                <img src="../public/img/Banner/Bannerbg.png" class="cta-bg cta-bg-left" alt="">
-                <img src="../public/img/Banner/Bannerbg.png" class="cta-bg cta-bg-right" alt="">
-                <div class="banner-content">
+                <img src="../public/img/Banner/bannerburger.png" alt="" class="cta-burger cta-burger-right" >
+                <div class="banner-content scroll-reveal" data-delay="100">
                     <h2>REGÍSTRATE Y OBTÉN</h2>
                     <span>CUPONES</span>
-                    <a href="../view/Rewards.html" class="cta-link">IR AHORA &rarr;</a>
+                    <a href="../view/Rewards.html" class="cta-link scroll-reveal" data-delay="200">
+                    <span>IR AHORA</span>
+                    <div class="arrow-box"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M400-280v-400l200 200-200 200Z"/></svg></div>
+                </a>
+
                 </div>
             </div>
         </div>
+        
     </section>
     <!-- ===================== END BANNER SECTION ===================== -->
 
-    <!-- ===================== SPLINE ANIMATION SECTION ===================== -->
-    <section>
-        <div class="animation_gif">
-            <div class="spline-2d">
-                <spline-viewer url="https://prod.spline.design/F5YNml5PVrF1TMJL/scene.splinecode" events-target="global"></spline-viewer>
-            </div>
-        </div>
-    </section>
-    <!-- =================== END SPLINE ANIMATION SECTION =================== -->
+    <!-- ===================== SPLINE ANIMATION / GAME / MAP SECTION ===================== -->
+    
+
+
+    <!-- =================== END SPLINE ANIMATION / GAME / MAP SECTION =================== -->
     
     <!-- ====================== HISTORY SECTION ======================= -->
     <section class="history-section">
         <div class="history-container">
+            <div class="history-image-det scroll-reveal" data-delay="200">
             <div class="history-image-col">
-                <img src="img/OurHistory/Vegetales.png" alt="" class="cta-table cta-table-vegetales">
-                <img src="img/OurHistory/tabla.png" alt="" class="cta-table cta-table-tabla">
+                
+                <img src="img/OurHistory/Vegetales.png" alt="" class="cta-table cta-table-vegetales scroll-reveal" data-delay="200">
+                <img src="img/OurHistory/tabla.png" alt="" class="cta-table cta-table-tabla ">
+                </div>
             </div>
             <div class="history-content-col">
-                <h2 class="history-title">
-                    <span>NUESTRA</span>
-                    <span>HISTORIA</span>
+                <h2 class="history-title scroll-reveal" data-delay="100">
+                    <span class="scroll-reveal" data-delay="300">NUESTRA</span>
+                    <span class="scroll-reveal" data-delay="500">HISTORIA</span>
                 </h2>
-                <p class="history-text">
+                <p class="history-text scroll-reveal" data-delay="600">
                     Reunimos los festivales gastronómicos de Zipaquirá en un solo lugar, para que saborees su tradición y cultura en cada evento.
                 </p>
-                <a href="../view/AboutUs.html" class="history-button">Conócenos &rarr;</a>
+                <a href="../view/AboutUs.html" class="history-button scroll-reveal" data-delay="800">Conócenos &rarr;</a>
             </div>
         </div>
+        <div class="bg-grid"></div>
     </section>
     <!-- ==================== END HISTORY SECTION ===================== -->
 
     <!-- =================== SOCIAL MEDIA SECTION =================== -->
     <section class="social-media-section">
-        <div class="container">
-            <div class="social-header">
-                <span class="header-main-text">REDES</span>
-                <span class="header-main-text2">SOCIALES</span>
-                <span class="header-handle">@ZipaFest</span>
-            </div>
-            <div class="products-showcase">
-                <div class="product-card card-burger"></div>
-                <div class="product-card card-empanadas"></div>
-                <div class="product-card card-bebida">
-                     <div class="social-icons">
-                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="social-header">
+      <span class="header-main-text scroll-reveal" data-delay="400">REDES</span>
+      <span class="header-main-text2 scroll-reveal" data-delay="200">SOCIALES</span>
+      <span class="header-handle">@ZipaFest</span>
+    </div>
+
+    <div class="products-showcase">
+      <!-- === TARJETA 1 === -->
+      <div class="flip-card card-burger">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"></div>
+          <div class="flip-card-back"></div>
         </div>
-    </section>
+      </div>
+
+      <!-- === TARJETA 2 === -->
+      <div class="flip-card card-empanadas">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"></div>
+          <div class="flip-card-back"></div>
+        </div>
+      </div>
+
+      <!-- === TARJETA 3 === -->
+      <div class="flip-card card-bebida">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"></div>
+          <div class="flip-card-back"></div>
+          
+        </div>
+        <div class="social-icons scroll-reveal" data-delay="300">
+      <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+      <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+    </div>
+      </div>
+      
+    </div>
+
+  </div>
+  <div class="bg-grid"></div>
+</section>
+
     <!-- ================= END SOCIAL MEDIA SECTION ================= -->
 </main>
 
@@ -180,7 +284,7 @@
     <div class="footer-container">
         <div class="footer-column-left">
             <div class="logo-group">
-                <img src="../public/img/Logo/Horizontal_Color.svg" alt="Escudo Alcaldía de Zipaquirá" class="footer-logo">
+                <img src="../public/img/Logo/Horizontal_Positivo.svg" alt="Escudo Alcaldía de Zipaquirá" class="footer-logo">
             </div>
             <div class="contact-info">
                 <h4>Punto de Información Turística</h4>
@@ -209,6 +313,6 @@
     </div>
 </footer> 
 <!-- ======================= END FOOTER ======================= -->
- <script src="../model/header.js" defer></script>
+ <script src="../model/script.js" defer></script>
 </body>
 </html>

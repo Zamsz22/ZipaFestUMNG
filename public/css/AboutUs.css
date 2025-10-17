@@ -1,55 +1,97 @@
 @import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ranchers&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Nohemi:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
 
 
-:root{
-  --ink:#111; --muted:#7f8183; --route:#7f8183;
-  --yellow:#f6c132; --orange:#ff7a26; --green:#25b36a;
-  --red:rgb(230, 57, 71);
-  --maxw:1200px;
-  --color-primary: #FF7A00;
-  --color-secondary: #222831;
-  --color-background: #FFFFFF;
-  --color-background-soft: #F9F9F9;
-  --color-text-light: #FFFFFF;
-  --color-text-dark: #222831;
-  --color-text-muted: #6c757d;
-  --color-accent-primary: #E63946;
-  --color-accent-secondary: #FFC107;
-  --color-hover-success: #ffa600;
-}
-
+/* ========================================================================== */
+/*                                SECCIÓN GENERAL                             */
+/* ========================================================================== */
 .history-section {
   position: relative;
-  /* Espacio para el header fijo y un poco de aire abajo */
-  padding: 200px 24px  0px 80px; 
-  background-color: var(--color-background); /* Fondo blanco liso */
+  width: 100%;
+  min-height: 100vh;
+  background-color: #FFF7ED;
+  overflow-x: hidden;
 }
 
-/* --- Contenedor para Posicionamiento (el "lienzo") --- */
-.history-wrap {
-  position: relative; /* ¡El cambio más importante! */
-  max-width: var(--maxw);
-  margin: 0 auto;
-  /* Le damos una altura para que los elementos absolutos tengan espacio.
-     Ajusta este valor si es necesario. */
-  min-height: 700px; 
-  margin-bottom: 50px;
+.grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../img/Categories/bg.png) repeat;
+  background-size: auto;
+  z-index: 1;
+  filter: blur(0.8px) brightness(1.8) opacity(40%);
 }
 
-/* --- Título (estilo idéntico a la imagen) --- */
+/* ========================================================================== */
+/*                            MUÑECOS DECORATIVOS                             */
+/* ========================================================================== */
+.muneco1 {
+  position: absolute;
+  top: 250px;
+  left: -70px;
+  width: 300px;
+  height: 300px;
+  background: url(../img/AboutUs/muñeco1.svg) no-repeat center;
+  background-size: contain;
+  z-index: 2;
+}
+
+.muneco2 {
+  position: absolute;
+  top: 180px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  background: url(../img/AboutUs/muñeco1.svg) no-repeat center;
+  background-size: contain;
+  transform: rotate(180deg);
+  z-index: 2;
+}
+
+.muneco3 {
+  position: absolute;
+  top: 1180px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: url(../img/AboutUs/muñeco2.svg) no-repeat center;
+  background-size: contain;
+  z-index: 2;
+}
+
+.muneco4 {
+  position: absolute;
+  top: 1180px;
+  left: -65px;
+  width: 300px;
+  height: 300px;
+  transform: rotate(180deg);
+  background: url(../img/AboutUs/muñeco2.svg) no-repeat center;
+  background-size: contain;
+  z-index: 2;
+}
+
+
+/* ========================================================================== */
+/*                                 TÍTULO DE LA SECCIÓN                       */
+/* ========================================================================== */
 .history-title {
+  padding: 100px 80px 0px 80px;
   text-align: center;
   margin-bottom: 40px;
   position: relative;
-  z-index: 5; /* Por encima de todo */
+  z-index: 5;
 }
 
 .history-title .kicker,
 .history-title .main {
-  font-family: 'Ranchers', cursive; /* Misma fuente para ambos */
+  font-family:'BBH Sans Hegarty', sans-serif;
   text-transform: uppercase;
-  color: var(--color-text-dark);
+  color: #333;
   line-height: 1;
+  display: block;
 }
 .history-title .kicker {
   font-size: clamp(36px, 5vw, 48px);
@@ -58,134 +100,409 @@
   font-size: clamp(60px, 9vw, 90px);
 }
 
-/* --- Mapa de fondo con la ruta --- */
+.history-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-.bg-map {
+/* ========================================================================== */
+/*                             LÍNEA DE TIEMPO PRINCIPAL                      */
+/* ========================================================================== */
+.linea-tiempo {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 150px;
+  background: url('../img/AboutUs/recursos_aboutus/guia.png') no-repeat center top;
+  background-size: contain;
+  background-origin: content-box;
+  gap: 270px;
+}
+
+/* ========================================================================== */
+/*                                BLOQUES DE LA HISTORIA                      */
+/* ========================================================================== */
+.bloque {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.bloque-izquierda {
+  max-width: 900px;
+  justify-content: flex-start;
+  margin-left: -650px;
+  transform: translateX(50%);
+  top: 200px;
+}
+
+.bloque-derecha {
+  max-width: 900px;
+  justify-content: flex-end;
+  margin-left: 700px;
+  transform: translateX(-25%);
+  top: 100px;
+}
+
+.bloque-izquierda2 {
+  max-width: 900px;
+  justify-content: flex-start;
+  margin-right: 500px;
+  transform: translateX(30%);
+  top: 50px;
+  margin-bottom: 45px;
+}
+
+/* ========================================================================== */
+/*                                TARJETAS DE CONTENIDO                       */
+/* ========================================================================== */
+.tarjeta {
+  position: relative;
+  width: 320px;
+  height: 220px;
+  border-radius: 20px;
+  padding: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* ========================================================================== */
+/*                             TEXTO DENTRO DE LAS TARJETAS                   */
+/* ========================================================================== */
+.inforojo {
+    position: absolute;
+    width: calc(100% - 40px);
+    max-width: 280px;
+    text-align: center;
+    color: #fff0d6;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -110%);
+    z-index: 3;
+}
+
+.infoverde {
+    position: absolute;
+    width: calc(100% - 40px);
+    max-width: 280px;
+    text-align: center;
+    color: #fff0d6;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -110%);
+    z-index: 3;
+}
+
+.infoazul {
+    position: absolute;
+    width: calc(100% - 40px);
+    max-width: 280px;
+    text-align: center;
+    color: #fff0d6;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -110%);
+    z-index: 3;
+}
+
+.inforojo h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Nohemi', sans-serif;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.inforojo p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #fff0d6;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.infoverde h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Nohemi', sans-serif;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.infoverde p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #fff0d6;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.infoazul h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Nohemi', sans-serif;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.infoazul p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #fff0d6;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+/* ========================================================================== */
+/*                             IMÁGENES DE FONDO EN TARJETAS                  */
+/* ========================================================================== */
+.imagen_pizza,
+.imagen_torta,
+.imagen_burguer {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: min(100%, 1100px); /* Ajusta el tamaño del mapa */
-  opacity: 0.5; /* Más sutil como en la imagen */
-  z-index: -2; /* Detrás de los nodos */
+  object-fit: contain;
+  z-index: 1;
 }
 
-/* --- Estilo Base para los Nodos (comida + texto) --- */
-.node {
-  position: absolute; /* ¡Ahora cada nodo se puede posicionar libremente! */
-  width: 300px;
-  z-index: 2;
-  display: flex; /* Usamos flex para alinear imagen y texto */
-  align-items: center;
-  gap: 16px;
-}
-
-/* --- Posicionamiento específico para CADA nodo --- */
-/* ¡Puedes ajustar estos valores para un calce perfecto! */
-.node--burger {
-  top: 20px;
-  left: 5%;
-  flex-direction: column; /* Texto debajo de la imagen */
-  text-align: center;
-  width: 250px;
-}
-.node--pizza {
-  top: 180px;
-  right: 12%;
-  flex-direction: column; /* Texto debajo */
-  text-align: center;
-  width: 250px;
-}
-.node--cake {
-  top: 450px;
-  left: 10%;
-  flex-direction: column; /* Texto debajo */
-  text-align: center;
-  width: 280px;
-}
-
-/* --- Círculo de color e imagen --- */
-.node .badge {
-  position: relative;
-  margin-bottom: 10px; /* Espacio entre imagen y texto */
-}
-
-.node .badge img {
-  position: relative;
-  z-index: 2; /* Imagen sobre el círculo */
-  filter: drop-shadow(0 8px 15px rgba(0,0,0,0.2));
-}
-
-/* Círculo de color (pseudoelemento) */
-.node .badge::before {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  z-index: 1; /* Círculo detrás de la imagen */
-}
-
-/* --- Estilos específicos para cada círculo e imagen --- */
-.node--burger .badge img { width: 180px; }
-.node--burger .badge::before {
-  width: 160px; height: 160px;
-  background: var(--yellow);
-  top: -10px; left: -15px;
-}
-
-.node--pizza .badge img { width: 220px; }
-.node--pizza .badge::before {
-  width: 180px; height: 180px;
-  background: var(--red);
-  top: 10px; left: 10px;
-}
-
-.node--cake .badge img { width: 220px; transform: scaleX(-1);}
-.node--cake .badge::before {
-  width: 200px; height: 200px;
-  background: var(--green);
-  top: -15px; left: -10px;
-  
-}
-
-/* --- Párrafo de texto --- */
-.node .copy {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--color-text-muted); /* Color más suave */
-  max-width: 35ch; /* Ancho de línea para legibilidad */
-}
-
-
-.people{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin-top: 200px;
-  z-index: 2;
-}
-.people img{
-  width: min(900px, 92vw);
+.imagen_pizza {
+  width: 100%;
   height: auto;
-  filter: drop-shadow(0 16px 24px rgba(0,0,0,.2));
+  max-height: 600px;
 }
 
-/* ------- Responsive básico ------- */
-@media (max-width: 980px){
-  .history-wrap{
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "title"
-      "burger"
-      "pizza"
-      "cake";
-    gap: 28px;
-  }
-  .node .badge{ max-width: 320px; height: 200px; margin-inline:auto; }
-  .node .copy{ margin-inline:auto; text-align:center; }
+.imagen_burguer {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
 }
-@media (max-width: 640px){
-  .history-section{ padding-top: 140px; }
-  .bg-map{ width: 92%; opacity:.18; }
+
+.imagen_torta {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+}
+
+
+/* ========================================================================== */
+/*                           AJUSTES RESPONSIVOS                              */
+/* ========================================================================== */
+
+/* --- Escritorio Grande (más de 1200px) --- */
+@media (max-width: 1201px) {
+  .bloque-izquierda { 
+    transform: translateX(35%);
+  
+  }
+  .bloque-derecha { 
+    transform: translateX(-35%); 
+  }
+  .bloque-izquierda2 { 
+    transform: translateX(35%); 
+  }
+
+}
+
+/* --- Tablet (hasta 980px) --- */
+@media (max-width: 980px) {
+  .linea-tiempo {
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    gap: 80px;
+    padding-top: 30px;
+    padding-bottom: 80px;
+  }
+
+  .bloque,
+  .bloque-izquierda,
+  .bloque-izquierda2,
+  .bloque-derecha {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    justify-content: center;
+    top: auto;
+    bottom: auto;
+  }
+
+  .tarjeta {
+    width: 100%;
+    height: 650px;
+    padding: 20px;
+  }
+
+  .inforojo {
+    position: absolute;
+    transform: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    left: 75px;
+    top: 60px;
+  }
+
+  .inforojo h3 {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .inforojo p {
+    text-align: center;
+    width: 90%;
+    max-width: 300px;
+  }
+
+    .infoverde {
+    position: absolute;
+    transform: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    left: 65px;
+    top: 100px;
+  }
+
+  .infoverde h3 {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .infoverde p {
+    text-align: center;
+    width: 90%;
+    max-width: 300px;
+  }
+
+.infoazul {
+    position: absolute;
+    transform: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    left: 75px;
+    top: 130px;
+  }
+
+  .infoazul h3 {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .infoazul p {
+    text-align: center;
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .imagen_pizza,
+  .imagen_torta,
+  .imagen_burguer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  z-index: 1;
+  }
+
+
+}
+
+/* --- Móvil (hasta 640px) --- */
+@media (max-width: 640px) {
+  .history-title {
+    padding-top: 150px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 150px;
+  }
+
+  .history-title .kicker {
+    font-size: 30px;
+  }
+  .history-title .main {
+    font-size: 50px;
+  }
+
+  .linea-tiempo {
+    gap: 40px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+
+  .tarjeta {
+    height: 380px;
+    padding: 15px;
+    margin-bottom: 100px;
+  }
+
+  .inforojo {
+    top: -90px;
+    right: 80px;
+    max-width: 250px;
+  }
+
+  .infoverde {
+    top: -40px;
+    right: 80px;
+    max-width: 250px;
+  }
+
+  .infoazul {
+    top: -20px;
+    right: 80px;
+    max-width: 250px;
+  }
+
+  .info h3 {
+    font-size: 16px;
+  }
+
+  .info p {
+    font-size: 10px;
+  }
 }

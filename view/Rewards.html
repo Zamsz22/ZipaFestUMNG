@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZipaFest</title>
+    <title>ZipaFest - Cupones</title>
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="../public/css/style.css">
     <link rel="stylesheet" href="../public/css/Rewards.css">
+
+    <!-- Iconos -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
     
+    <!-- Spline -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
 </head>
-<body>
+<body class="cupons">
+
 <!-- ========================= HEADER ========================= -->
 <header>
-     <a href="../public/index.html" class="header-logo"><img src="../public/img/Logo/Negativo.svg" alt="ZipaFest Logo"></a>
-     <ul class="nav-links">
+    <a href="../public/index.html" class="header-logo">
+        <img src="../public/img/Logo/Negativo.svg" alt="ZipaFest Logo">
+    </a>
+
+    <ul class="nav-links">
         <li class="category">
             <a href="../public/index.html#categories">CATEGORÍAS
-                <span class="material-icons dropdown-icon">
-                    expand_more
-                </span>
+                <span class="material-icons dropdown-icon">expand_more</span>
             </a>
             <ul class="drop-down">
                 <li><a href="../view/Burger.html">BURGER FEST</a></li>
@@ -30,153 +37,164 @@
                 <li><a href="../view/Coffee.html">COFFEE MASTER</a></li>
             </ul>
         </li>
-        <li> <a href="../view/Rewards.html">CUPONES</a></li>
-        <li> <a href="../view/AboutUs.html">SOBRE NOSOTROS</a></li>
+        <li><a href="../view/Rewards.html">CUPONES</a></li>
+        <li><a href="../view/AboutUs.html">SOBRE NOSOTROS</a></li>
     </ul>
     
     <div class="header-right">
         <a href="../view/Contact.html" class="contact-link">. CONTACTANOS .</a>
-        <a href="" class="login-button">INGRESAR</a>
+        <a href="#" class="login-button">INGRESAR</a>
     </div>
 </header>
 <!-- ======================= END HEADER ======================= -->
 
-        <main class="coupons-main">
-            <h1 class="page-title">TUS CUPONES</h1>
-            <div class="coupons-grid" >
-                <span class="divider-line"></span>
-                <a href="#coupon-hamburguesa" class="coupon-card">
-                    <img src="../public/img/Cupones/hamburguesa_suprema.png" alt="Hamburguesa Suprema">
-                    <div class="coupon-info">
-                        <h3 id="burguer">Hamburguesa Suprema</h3>
-                        <p >Ta' buena</p>
-                        <span class="ver-mas">Ver más</span>
-                    </div>
-                </a>
-                
-                <a href="#coupon-cafe" class="coupon-card">
-                    <img src="../public/img/Cupones/cafe_almojabanero.png" alt="Café Almojabanero">
-                    <div class="coupon-info">
-                        <h3>Café Almojabanero</h3>
-                        <p >La mejor combinación para una tarde de compartir</p>
-                        <span class="ver-mas">Ver más</span>
-                    </div>
-                </a>
+<main class="coupons-main">
+    <h1 class="page-title scroll-reveal" data-delay="200">TUS CUPONES</h1>
+    <div class="linea"></div>
 
-                <a href="#coupon-pizza" class="coupon-card">
-                    <img src="../public/img/Cupones/pizza_detonante.png" alt="Pizza Detonante">
-                    <div class="coupon-info">
-                        <h3>Pizza Detonante</h3>
-                        <p >Prepárate para probar una sensación diferente con esta pizza</p>
-                        <span class="ver-mas">Ver más</span>
-                    </div>
-                </a>
 
-                <a href="#coupon-empanada" class="coupon-card">
-                    <img src="../public/img/Cupones/empanada_masiva.png" alt="Empanada Masiva">
-                    <div class="coupon-info">
-                        <h3>Empanada Masiva</h3>
-                        <p >Rellena de amor y más hectáreas de sabor</p>
-                        <span class="ver-mas">Ver más</span>
-                    </div>
-                </a>
+    <!-- ======= NUEVA SECCIÓN DE CUPONES ======= -->
+     <div class="coupon-card-det">
+    <div class="coupons-grid ">
 
+        <!-- CUPÓN 1 -->
+        <a href="#coupon-hamburguesa" class="coupon-card " aria-label="Hamburguesa Suprema">
+            <div class="coupon-info">
+                <h3 id="burguer">Hamburguesa Suprema</h3>
+                <p id="pburger">Ta' Buena, experiencia de sabor que está a otro nivel</p>
+                <span class="ver-mas">Ver más</span>
             </div>
+            <img class="food-img-burger " src="../public/img/Cupones/recurso_cupones/burguer.png" alt="Hamburguesa Suprema">
+        </a>
 
-            <div id="coupon-hamburguesa" class="popup-container">
-                <div class="popup-content">
-                    <a href="#" class="close-btn">&times;</a>
-                    <div class="popup-header">
-                        <h2>Hamburguesa Suprema</h2>
-                    </div>
-                    <div class="popup-body">
-                        <img src="../public/img/Cupones/QR.png" alt="Código QR de la Hamburguesa Suprema">
-                        <p>Rellena con jugosa carne de res, queso cheddar derretido y cebolla caramelizada, todo dentro de un suave pan brioche dorado.</p>
-                    </div>
-                    <button class="redeem-btn">Redimir</button>
-                    <div class="popup-footer">
-                        <div class="sold-most">
-                            <span class="sold-most-text">LA MÁS </span>
-                            <span class="sold-most-text2">VENDIDA </span>
-                            <p>Nuestra hamburguesa artesanal con carne de res premium, queso cheddar y cebolla caramelizada en pan brioche, irresistible de principio a fin</p>
-                        </div>
-                    </div>
+        <!-- CUPÓN 2 -->
+        <a href="#coupon-cafe" class="coupon-card" aria-label="Café Almojabanero">
+            <div class="coupon-info">
+                <h3>Café Almojabanero</h3>
+                <p>La mejor combinación para una tarde de compartir</p>
+                <span class="ver-mas">Ver más</span>
+            </div>
+            <img class="food-img-cafe" src="../public/img/Cupones/recurso_cupones/cafe.png" alt="Café Almojabanero">
+        </a>
+
+        <!-- CUPÓN 3 -->
+        <a href="#coupon-pizza" class="coupon-card" aria-label="Pizza Detonante">
+            <div class="coupon-info">
+                <h3>Pizza Detonante</h3>
+                <p>Prepárate para probar una sensación detonante</p>
+                <span class="ver-mas">Ver más</span>
+            </div>
+            <img class="food-img-pizza" src="../public/img/Cupones/recurso_cupones/pizza.png" alt="Pizza Detonante">
+        </a>
+
+        <!-- CUPÓN 4 -->
+        <a href="#coupon-empanada" class="coupon-card" aria-label="Empanada Masiva">
+            <div class="coupon-info">
+                <h3>Empanada Masiva</h3>
+                <p>Rellena de amor y tres hectáreas de sabor</p>
+                <span class="ver-mas">Ver más</span>
+            </div>
+            <img class="food-img-empanada" src="../public/img/Cupones/recurso_cupones/empanadas.png" alt="Empanada Masiva">
+        </a>
+    </div>
+    </div>
+    <!-- ======= FIN DE CUPONES ======= -->
+
+
+    <!-- ================= POPUPS ================= -->
+
+    <div id="coupon-hamburguesa" class="popup-container ">
+        <div class="popup-content">
+            <a href="#" class="close-btn">&times;</a>
+            <div class="popup-header">
+                <h2>Hamburguesa Suprema</h2>
+            </div>
+            <div class="popup-body">
+                <img src="../public/img/Cupones/QR.png" alt="Código QR Hamburguesa Suprema">
+                <p>Rellena con jugosa carne de res, queso cheddar derretido y cebolla caramelizada, todo dentro de un suave pan brioche dorado.</p>
+            </div>
+            <button class="redeem-btn">Redimir</button>
+            <div class="popup-footer">
+                <div class="sold-most">
+                    <span class="sold-most-text">LA MÁS</span>
+                    <span class="sold-most-text2">VENDIDA</span>
+                    <p>Nuestra hamburguesa artesanal con carne de res premium, queso cheddar y cebolla caramelizada en pan brioche, irresistible de principio a fin.</p>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <div id="coupon-cafe" class="popup-container">
-                <div class="popup-content">
-                    <a href="#" class="close-btn">&times;</a>
-                    <div class="popup-header">
-                        <h2>Café Almojabanero</h2>
-                    </div>
-                    <div class="popup-body">
-                        <img src="../public/img/Cupones/QR.png" alt="Código QR de café almojabanero">
-                        <p>Café caliente estilo latte, preparado con espresso intenso y leche cremosa, servido con hielo y endulzado ligeramente.</p>
-                    </div>
-                    <button class="redeem-btn">Redimir</button>
-                    <div class="popup-footer">
-                        <div class="sold-most">
-                            <span class="sold-most-text">LATTE EL</span>
-                            <span class="sold-most-text2">CORAZON</span>
-                            <p>Un café que fusiona lo mejor del espresso con la suavidad de la leche y un toque único: bolitas de almojábana recién horneadas, para un sabor que te transporta a casa.</p>
-                        </div>
-                    </div>
+    <div id="coupon-cafe" class="popup-container">
+        <div class="popup-content">
+            <a href="#" class="close-btn">&times;</a>
+            <div class="popup-header">
+                <h2>Café Almojabanero</h2>
+            </div>
+            <div class="popup-body">
+                <img src="../public/img/Cupones/QR.png" alt="Código QR Café Almojabanero">
+                <p>Café caliente estilo latte, preparado con espresso intenso y leche cremosa, servido con hielo y endulzado ligeramente.</p>
+            </div>
+            <button class="redeem-btn">Redimir</button>
+            <div class="popup-footer">
+                <div class="sold-most">
+                    <span class="sold-most-text">LATTE EL</span>
+                    <span class="sold-most-text2">CORAZÓN</span>
+                    <p>Un café que fusiona lo mejor del espresso con la suavidad de la leche y un toque único: bolitas de almojábana recién horneadas, para un sabor que te transporta a casa.</p>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <div id="coupon-pizza" class="popup-container">
-                <div class="popup-content">
-                    <a href="#" class="close-btn">&times;</a>
-                    <div class="popup-header">
-                        <h2>Pizza Suprema</h2>
-                    </div>
-                    <div class="popup-body">
-                        <img src="../public/img/Cupones/QR.png" alt="Código QR de la Pizza Detonante">
-                        <p>Cargada con queso derretido, pepperoni, pimientos verdes, aceitunas negras, champiñones frescos y cebolla morada, sobre una base de masa dorada y crujiente.</p>
-                    </div>
-                    <button class="redeem-btn">Redimir</button>
-                    <div class="popup-footer">
-                        <div class="sold-most">
-                            <span class="sold-most-text">LA FAVORTA</span>
-                            <span class="sold-most-text2">DE LA CASA</span>
-                            <p>Nuestra pizza de vegetales y pepperoni, horneada a la perfección y servida con una limonada helada para un contraste fresco y delicioso.</p>
-                        </div>
-                    </div>
+    <div id="coupon-pizza" class="popup-container">
+        <div class="popup-content">
+            <a href="#" class="close-btn">&times;</a>
+            <div class="popup-header">
+                <h2>Pizza Detonante</h2>
+            </div>
+            <div class="popup-body">
+                <img src="../public/img/Cupones/QR.png" alt="Código QR Pizza Detonante">
+                <p>Cargada con queso derretido, pepperoni, pimientos verdes, aceitunas negras, champiñones frescos y cebolla morada sobre masa dorada y crujiente.</p>
+            </div>
+            <button class="redeem-btn">Redimir</button>
+            <div class="popup-footer">
+                <div class="sold-most">
+                    <span class="sold-most-text">LA FAVORITA</span>
+                    <span class="sold-most-text2">DE LA CASA</span>
+                    <p>Nuestra pizza de vegetales y pepperoni, horneada a la perfección y servida con una limonada helada para un contraste fresco y delicioso.</p>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <div id="coupon-empanada" class="popup-container">
-                <div class="popup-content">
-                    <a href="#" class="close-btn">&times;</a>
-                    <div class="popup-header">
-                        <h2>Empanada Masiva</h2>
-                    </div>
-                    <div class="popup-body">
-                        <img src="../public/img/Cupones/QR.png" alt="Código QR de la Empanada Masiva">
-                        <p>Rellena de jugosa carne sazonada y vegetales tiernos, envuelta en una masa dorada y suave, recién horneada.</p>
-                    </div>
-                    <button class="redeem-btn">Redimir</button>
-                    <div class="popup-footer">
-                        <div class="sold-most">
-                            <span class="sold-most-text">LA DE</span>
-                            <span class="sold-most-text2">SIEMPRE</span>
-                            <p>Recién salida del horno, con relleno casero irresistible y maridada con una bebida oscura helada para el equilibrio perfecto</p>
-                        </div>
-                    </div>
+    <div id="coupon-empanada" class="popup-container">
+        <div class="popup-content">
+            <a href="#" class="close-btn">&times;</a>
+            <div class="popup-header">
+                <h2>Empanada Masiva</h2>
+            </div>
+            <div class="popup-body">
+                <img src="../public/img/Cupones/QR.png" alt="Código QR Empanada Masiva">
+                <p>Rellena de jugosa carne sazonada y vegetales tiernos, envuelta en una masa dorada y suave, recién horneada.</p>
+            </div>
+            <button class="redeem-btn">Redimir</button>
+            <div class="popup-footer">
+                <div class="sold-most">
+                    <span class="sold-most-text">LA DE</span>
+                    <span class="sold-most-text2">SIEMPRE</span>
+                    <p>Recién salida del horno, con relleno casero irresistible y maridada con una bebida oscura helada para el equilibrio perfecto.</p>
                 </div>
             </div>
-                    
-            
-        </main>
+        </div>
+    </div>
     
-        
+</main>
+
 <!-- ========================= FOOTER ========================= -->
 <footer class="main-footer">
     <div class="footer-container">
         <div class="footer-column-left">
             <div class="logo-group">
-                <img src="../public/img/Logo/Horizontal_Color.svg" alt="Escudo Alcaldía de Zipaquirá" class="footer-logo">
+                <img src="../public/img/Logo/Horizontal_Color.svg" alt="Escudo Alcaldía de Zipaquirá" class="footer-logo  ">
             </div>
             <div class="contact-info">
                 <h4>Punto de Información Turística</h4>
@@ -185,8 +203,8 @@
                 <p>10:00 a.m. a 2:00 p.m.</p>
                 <p class="copyright">Copyright © 2025</p>
             </div>
-            
         </div>
+
         <div class="footer-column-center">
             <div class="divider"></div>
             <nav class="footer-nav">
@@ -198,13 +216,16 @@
                 </ul>
             </nav>
         </div>
+
         <div class="footer-column-right">
             <img src="../public/img/Logo/Negativo.svg" alt="Logo de Alcaldía de Zipaquirá" class="alcaldia-logo-big">
             <div class="divider"></div>
         </div>
     </div>
-</footer> 
-<script src="../model/header.js" defer></script>
+</footer>
+<div class="bg-grid"></div>
 <!-- ======================= END FOOTER ======================= -->
+
+<script src="../model/script.js" ></script>
 </body>
 </html>
