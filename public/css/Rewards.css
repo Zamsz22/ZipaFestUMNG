@@ -5,18 +5,6 @@
   background-color: #FFF7ED;
 }
 
-.bg-grid {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background: url(/public/img/Categories/bg.png);
-  z-index: -50;
-  filter: blur(0.8px) brightness(1.8) opacity(40%);
-  top: 0;
-}
 
 .coupons-main {
   text-align: center;
@@ -361,7 +349,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/public/img/Categories/bg.png");
+  background-image: url('../img/Categories/bg.png');
   background-repeat: repeat;
   background-size: auto;
   background-position: top left;
