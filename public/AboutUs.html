@@ -7,8 +7,8 @@
     <title>ZipaFest - Sobre Nosotros</title>
     
     <!-- CSS Files -->
-    <link rel="stylesheet" href="../public/css/style.css">
-    <link rel="stylesheet" href="../public/css/AboutUs.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/AboutUs.css">
     
     <!-- Google Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -20,40 +20,42 @@
 <body>
 <!-- ========================= HEADER ========================= -->
 <header>
-    <a href="../public/index.html" class="header-logo">
-        <img src="../public/img/Logo/Negativo.svg" alt="ZipaFest Logo">
-    </a>
-    
-    <!-- Menú Hamburguesa para móvil -->
-    <div class="menu-toggle">
+     <a href="index.html" class="header-logo"><img src="img/Logo/Negativo.svg" alt="ZipaFest Logo"></a>
+
+     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
         <span></span>
         <span></span>
         <span></span>
-    </div>
-    
-    <ul class="nav-links">
-        <li class="category">
-            <a href="../public/index.html#categories">CATEGORÍAS
+    </button>
+
+
+     <ul class="nav-links" id="navLinks">
+        <li class="category" id="categoryMenu">
+            <a href="#categories" class="categoryName" >CATEGORIAS
                 <span class="material-icons dropdown-icon">
                     expand_more
                 </span>
             </a>
             <ul class="drop-down">
-                <li><a href="../view/Burger.html">BURGER FEST</a></li>
-                <li><a href="../view/Cake.html">TORTA FEST</a></li>
-                <li><a href="../view/Pizza.html">PIZZA FEST</a></li>
-                <li><a href="../view/Empanada.html">EMPANADA FEST</a></li>
-                <li><a href="../view/Coffee.html">COFFEE MASTER</a></li>
+                <li><a href="Burger.html">BURGER FEST</a></li>
+                <li><a href="Cake.html">TORTA FEST</a></li>
+                <li><a href="Pizza.html">PIZZA FEST</a></li>
+                <li><a href="Empanada.html">EMPANADA FEST</a></li>
+                <li><a href="Coffee.html">COFFEE MASTER</a></li>
             </ul>
         </li>
-        <li><a href="../view/Rewards.html">CUPONES</a></li>
-        <li><a href="../view/AboutUs.html">SOBRE NOSOTROS</a></li>
-    </ul>
-    
-    <div class="header-right">
-        <a href="../view/Contact.html" class="contact-link">. CONTACTANOS .</a>
-        <a href="" class="login-button">INGRESAR</a>
+        <li> <a href=" Rewards.html">CUPONES</a></li>
+        <li> <a href=" AboutUs.html">SOBRE NOSOTROS</a></li>
+        <div class="header-right">
+        <a href=" Contact.html" class="contact-link">CONTACTANOS</a>
+        <a href=" loader.html" class="login-button">INGRESAR</a>
     </div>
+        
+    </ul>
+     
+   
+
+    <div class="nav-overlay" id="navOverlay"></div>
 </header>
 <!-- ======================= END HEADER ======================= -->
 
@@ -83,7 +85,7 @@
                             <h3>COMO SURGE</h3>
                             <p>Este proyecto surge como respuesta a esa necesidad un espacio digital donde la memoria de cada festival quede registrada y disponible para todos. Así, buscamos que la tradición gastronómica no solo se mantenga viva, sino que también llegue a más personas dentro y fuera de la región.</p>
                         </div>  
-                        <img src="../public/img/AboutUs/recursos_aboutus/PIZZA_LABEL.png" 
+                        <img src="img/AboutUs/recursos_aboutus/PIZZA_LABEL.png" 
                              alt="pizza" 
                              class="imagen_pizza"
                              loading="lazy">
@@ -98,7 +100,7 @@
                             <h3>IMPORTANCIA</h3>
                             <p class="pverde">Desde sus inicios, los festivales gastronómicos han sido más que un encuentro de sabores: son el reflejo de nuestra identidad, de los saberes ancestrales y de la unión de nuestra comunidad. Sin embargo, la falta de un lugar que centralice toda la información hacía que muchos de estos recuerdos se perdieran</p>
                         </div> 
-                        <img src="../public/img/AboutUs/recursos_aboutus/TORTA_LABEL.png" 
+                        <img src="img/AboutUs/recursos_aboutus/TORTA_LABEL.png" 
                              alt="torta" 
                              class="imagen_torta"
                              loading="lazy">
@@ -113,7 +115,7 @@
                             <h3 class="h3azul">CENTRALIZACION</h3>
                             <p>Conscientes de la importancia de la tradición gastronómica de nuestro municipio, decidimos crear una plataforma digital que conserve la memoria de los festivales y la ponga al alcance de todos. Lo que antes estaba disperso en afiches, notas o recuerdos aislados, ahora se integra en un solo espacio accesible y actualizado.</p>
                         </div>                         
-                        <img src="../public/img/AboutUs/recursos_aboutus/BURGER_LABEL.png" 
+                        <img src="img/AboutUs/recursos_aboutus/BURGER_LABEL.png" 
                              alt="hamburguesa" 
                              class="imagen_burguer"
                              loading="lazy">
@@ -129,9 +131,7 @@
     <div class="footer-container">
         <div class="footer-column-left">
             <div class="logo-group">
-                <img src="../public/img/Logo/Horizontal_Color.svg" 
-                     alt="Escudo Alcaldía de Zipaquirá" 
-                     class="footer-logo">
+                <img src="img/Logo/Horizontal_Positivo.svg" alt="Escudo Alcaldía de Zipaquirá" class="footer-logo">
             </div>
             <div class="contact-info">
                 <h4>Punto de Información Turística</h4>
@@ -140,32 +140,26 @@
                 <p>10:00 a.m. a 2:00 p.m.</p>
                 <p class="copyright">Copyright © 2025</p>
             </div>
+            
         </div>
-        
         <div class="footer-column-center">
             <div class="divider"></div>
             <nav class="footer-nav">
                 <ul class="nav-links-footer">
-                    <li><a href="../view/Rewards.html">CUPONES</a></li>
-                    <li><a href="../public/index.html#categories">CATEGORÍAS</a></li>
-                    <li><a href="../view/AboutUs.html">SOBRE NOSOTROS</a></li>
-                    <li><a href="../view/Contact.html">CONTÁCTANOS</a></li>
+                    <li><a href="Rewards.html">CUPONES</a></li>
+                    <li><a href="#categories">CATEGORÍAS</a></li>
+                    <li ><a href="AboutUs.html" >SOBRE NOSOTROS</a></li>
+                    <li><a href="Contact.html" >CONTÁCTANOS</a></li>
                 </ul>
             </nav>
         </div>
-        
         <div class="footer-column-right">
-            <img src="../public/img/Logo/Negativo.svg" 
-                 alt="Logo de Alcaldía de Zipaquirá" 
-                 class="alcaldia-logo-big">
+            <img src="img/Logo/Negativo.svg" alt="Logo de Alcaldía de Zipaquirá" class="alcaldia-logo-big">
             <div class="divider"></div>
         </div>
     </div>
 </footer> 
 <!-- ======================= END FOOTER ======================= -->
-
-<!-- JavaScript Files -->
-<script src="../model/header.js" defer></script>
-<script src="../model/script.js"></script>
+ <script src="./script.js" defer></script>
 </body>
 </html>
