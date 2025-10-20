@@ -161,18 +161,6 @@
   min-height: 320px;
 }
 
-.bg-grid{
-  position: absolute;
-  right: 0%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background: url(/public/img/Categories/bg.png);
-  z-index: -50;
-  filter: blur(0.8px) brightness(1.8) opacity(40%);
-}
 
 /* Pizza superpuesta */
 .contacto__pizza{
