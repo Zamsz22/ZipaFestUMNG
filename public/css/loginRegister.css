@@ -1,0 +1,242 @@
+:root {
+    --color-bg-cream: #f4f1ea;
+    --color-grid: #e0dacd;
+    --color-red: #6a0d1b;
+    --color-green: #105e36;
+    --color-yellow: #fdd000;
+    --color-text-dark: #3b1d1d;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-bg-cream);
+    background-image: 
+        linear-gradient(var(--color-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+    background-size: 40px 40px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* --- Fondo y Moto Spline --- */
+.moto-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.8;
+    pointer-events: none; /* Para que puedas hacer click en el form a través de la moto */
+    clip-path: rect(0% 100% 92.1% 0%);
+}
+
+
+
+.blob { position: absolute; border-radius: 50%; z-index: 0; filter: blur(60px); opacity: 0.6; }
+.blob-red { background: var(--color-red); width: 300px; height: 300px; top: -50px; left: -50px; }
+.blob-green { background: var(--color-green); width: 250px; height: 250px; bottom: -50px; right: -50px; }
+.bar-clip{
+    position: absolute;
+    background: var(--color-text-dark); 
+    width: 100%; 
+    height: 13%; 
+    bottom: -50px;
+}
+
+/* --- Escena 3D --- */
+.main-scene {
+    width: 100%;
+    max-width: 400px;
+    height: 600px; /* Altura fija necesaria para el flip */
+    perspective: 1500px; /* Profundidad 3D */
+    z-index: 10;
+    position: relative;
+}
+
+/* --- El Wrapper que gira --- */
+.card-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Rebote god */
+    transform-style: preserve-3d;
+}
+
+/* Clase que activa el giro */
+.card-wrapper.is-flipped {
+    transform: rotateY(180deg);
+}
+
+/* --- Caras de la tarjeta (Frente y Dorso) --- */
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    backface-visibility: hidden; /* Oculta la parte de atrás */
+    -webkit-backface-visibility: hidden;
+    top: 0;
+    left: 0;
+}
+
+/* Ajustes específicos para cada cara */
+.card-front {
+    transform: rotateY(0deg);
+    z-index: 2;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+/* --- Estilos de la Tarjeta Interna (Sticker) --- */
+.inner-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 
+        0 10px 30px rgba(59, 29, 29, 0.15),
+        0 0 0 10px rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    border: 2px solid #efece4;
+    /* Rotación estética del sticker */
+    /* Nota: Aplicamos la rotación estética al hijo para no romper el flip 3D */
+}
+
+.card-front .inner-card { transform: rotate(-2deg); }
+.card-back .inner-card { transform: rotate(1.5deg); }
+
+/* --- Header --- */
+.card-header {
+    padding: 30px 30px 45px;
+    text-align: center;
+    position: relative;
+    /* Efecto Papel Rasgado */
+    clip-path: polygon(
+        0% 0%, 100% 0%, 100% 90%, 
+        95% 95%, 90% 90%, 85% 95%, 80% 90%, 75% 95%, 70% 90%, 65% 95%, 60% 90%, 55% 95%, 50% 90%, 
+        45% 95%, 40% 90%, 35% 95%, 30% 90%, 25% 95%, 20% 90%, 15% 95%, 10% 90%, 5% 95%, 
+        0% 90%
+    );
+}
+
+.header-red { background-color: var(--color-red); }
+.header-green { background-color: var(--color-green); }
+
+.logo-text {
+    font-family: 'Paytone One', sans-serif;
+    color: white;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    line-height: 1;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+}
+
+.logo-sub {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-yellow);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    margin-top: 5px;
+}
+
+/* --- Body y Inputs --- */
+.card-body { padding: 20px 30px 30px; background: white; }
+.form-group { margin-bottom: 15px; }
+.form-row { display: flex; gap: 10px; margin-bottom: 15px; }
+.form-row .form-group { margin-bottom: 0; width: 50%; }
+
+.form-label {
+    display: block;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--color-grid);
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    transition: all 0.3s;
+    background-color: #faf9f6;
+}
+
+.form-input:focus {
+    border-color: var(--color-green);
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(16, 94, 54, 0.1);
+}
+
+/* --- Botones --- */
+.btn-action {
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 50px;
+    font-family: 'Paytone One', sans-serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: block;
+}
+
+.btn-green {
+    background-color: var(--color-green);
+    box-shadow: 0 4px 0 #0b4226;
+}
+.btn-green:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #0b4226; }
+.btn-green:active { transform: translateY(2px); box-shadow: 0 0 0 #0b4226; }
+
+.btn-red {
+    background-color: var(--color-red);
+    box-shadow: 0 4px 0 #3e060f;
+}
+.btn-red:hover { transform: translateY(-2px); background-color: #8a1225; box-shadow: 0 6px 0 #3e060f; }
+.btn-red:active { transform: translateY(2px); box-shadow: 0 0 0 #3e060f; }
+
+/* --- Footer y Links --- */
+.card-footer { text-align: center; margin-top: 15px; font-size: 0.85rem; }
+.link { 
+    color: var(--color-red); 
+    font-weight: 700; 
+    cursor: pointer; 
+    border-bottom: 2px solid transparent; 
+    transition: 0.3s; 
+}
+.link:hover { border-bottom-color: var(--color-red); }
+
+/* --- Comida Flotante --- */
+.floating-food {
+    position: absolute;
+    font-size: 3rem;
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1));
+    z-index: 11;
+    pointer-events: none;
+}
+
+.food-1 { top: -90px; right: -70px; scale: -1 1;}
+
+
+.img_pizza{
+    width: 200px;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(var(--r)); }
+    50% { transform: translateY(-15px) rotate(var(--r)); }
+}

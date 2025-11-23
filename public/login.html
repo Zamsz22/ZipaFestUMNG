@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zipa Fest - Acceso Master</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Paytone+One&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/loginRegister.css">
+</head>
+<body>
+
+    <div class="blob blob-red"></div>
+    <div class="blob blob-green"></div>
+    <div class="bar-clip"></div>
+
+
+    <div class="moto-container">
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.0/build/spline-viewer.js"></script>
+        <spline-viewer url="https://prod.spline.design/QQ5QzlLFAcdQXuF9/scene.splinecode"></spline-viewer>
+    </div>
+
+    <div class="main-scene">
+        <div class="card-wrapper" id="cardWrapper">
+            
+            <div class="card-face card-front">
+                <div class="floating-food food-1" style="--r: -10deg"><img  class="img_pizza" src="img/AboutUs/PIZZA_RECORTE.png" alt="Rebanada de pizza decorativa"/></div>
+
+
+                <div class="inner-card">
+                    <div class="card-header header-red">
+                        <div class="logo-text">ENTRA AL<br>PARCHE</div>
+                        <div class="logo-sub">ZIPA FEST</div>
+                    </div>
+                    <div class="card-body">
+                        <form onsubmit="event.preventDefault()">
+                            <div class="form-group">
+                                <label class="form-label">Usuario</label>
+                                <input type="text" class="form-input" placeholder="Ej. burger_king_23">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Contraseña</label>
+                                <input type="password" class="form-input" placeholder="••••••••">
+                            </div>
+                            
+                            <button type="button" class="btn-action btn-green" onclick="window.location.href='index.html'">
+                                INGRESAR
+                            </button>
+                            
+                            <div class="card-footer">
+                                <p>¿No tienes cuenta? <span class="link" onclick="toggleCard()">Regístrate</span></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-face card-back">
+                <div class="floating-food food-1" style="--r: -15deg"><img  class="img_pizza" src="img/AboutUs/PIZZA_RECORTE.png" alt="Rebanada de pizza decorativa"/></div>
+
+
+                <div class="inner-card">
+                    <div class="card-header header-green">
+                        <div class="logo-text" style="font-size: 2rem;">ÚNETE AL<br>PARCHE</div>
+                        <div class="logo-sub" style="color: white;">CREA TU CUENTA</div>
+                    </div>
+                    <div class="card-body">
+                        <form onsubmit="event.preventDefault()">
+                            <div class="form-group">
+                                <label class="form-label">Nombre</label>
+                                <input type="text" class="form-input" placeholder="Tu nombre">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Correo</label>
+                                <input type="email" class="form-input" placeholder="correo@zipa.com">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Pass</label>
+                                    <input type="password" class="form-input" placeholder="•••">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Confirm</label>
+                                    <input type="password" class="form-input" placeholder="•••">
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn-action btn-red" onclick="window.location.href='index.html'">
+                                REGISTRARSE
+                            </button>
+
+                            <div class="card-footer">
+                                <p>¿Ya tienes cuenta? <span class="link" onclick="toggleCard()">Inicia Sesión</span></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+     
+
+    <script>
+        function toggleCard() {
+            const card = document.getElementById('cardWrapper');
+            card.classList.toggle('is-flipped');
+        }
+    </script>
+</body>
+</html>

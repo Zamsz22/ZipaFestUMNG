@@ -223,6 +223,23 @@ window.addEventListener('resize', function() {
     }
 });
 
+document.getElementById("loginForm").addEventListener("submit", function(e){
+    e.preventDefault();
 
+    const email = document.getElementById("email").value.trim();
+    const pass  = document.getElementById("password").value.trim();
 
+    if(email === "" || pass === ""){
+        alert("Completa todos los campos");
+        return;
+    }
+
+    // Simulación de login
+    document.querySelector(".btn-login").innerText = "Entrando...";
+    document.querySelector(".btn-login").style.opacity = "0.7";
+
+    setTimeout(() => {
+        window.location.href = "index.html";
+    }, 1200);
+});
 
