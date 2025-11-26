@@ -24,16 +24,147 @@ body {
     position: relative;
 }
 
-/* --- Fondo y Moto Spline --- */
-.moto-container {
+/* ===================== POPUP DE LA MOTO ===================== */
+
+.moto-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s ease;
+}
+
+.moto-popup-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.moto-popup-content {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    height: 80vh;
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    transform: scale(.7);
+    transition: transform .4s ease;
+}
+
+.moto-popup-overlay.active .moto-popup-content {
+    transform: scale(1);
+}
+
+/* Botón cerrar */
+.moto-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: #6a0d1b;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 50;
+}
+
+.click-img img{
+    position: absolute;
+    width: 100px;
+    height: auto;
+    z-index: 2;
+    transform: rotate(-140deg);
+    top: 48%;
+    left: 33%;
+    }
+
+/* Botón amarillo "Juega y descubre" */
+/* Botón amarillo "Juega y descubre" */
+.btn-actionar {
+    width: 600px;
+    border: none;
+    padding: 14px;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    display: block;
+    
+}
+
+.btn-yellow {
+    position: absolute;
+    background-color: var(--color-red); 
+    color: var(--color-bg-cream); 
+    box-shadow: 0 4px 0 var(--color-text-dark); 
+    
+ 
+
+    width: 200px;
+    height: auto;
+    margin: 50px;
+    
+  
+    top: 50%;
+    right: 60%;
+    
+   
+    transform: rotate(-20deg) scale(1);
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.301));
+    
+  
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+/* HOVER ARREGLADO */
+.btn-yellow:hover {
+    /* Combinamos las transformaciones en una sola línea */
+    transform: rotate(-20deg) scale(1.1) translateY(-5px);
+    
+    /* Sombra más profunda para dar efecto de elevación */
+    box-shadow: 0 15px 0 rgba(0,0,0,0.1); 
+    filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.2));
+}
+
+/* ACTIVE (CLICK) ARREGLADO */
+.btn-yellow:active {
+    /* Al hacer click vuelve a su tamaño normal pero se hunde un poco */
+    transform: rotate(-20deg) scale(0.95) translateY(0);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.1);
+    transition: 0.1s;
+}
+
+/* Mantener diseño interno de la moto */
+.moto-popup-content .moto-container {
+    width: 100%;
+    height: 50%;
+    clip-path: none;
+    opacity: 1;
+    pointer-events: all;
+
+}
+
+.moto-container spline-viewer {
     position: absolute;
     width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: 0.8;
-    pointer-events: none; /* Para que puedas hacer click en el form a través de la moto */
-    clip-path: rect(0% 100% 92.1% 0%);
+    height: auto;
+   left: 0%;
+   right: 95%;
+
 }
+
 
 
 
@@ -239,4 +370,6 @@ body {
 @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(var(--r)); }
     50% { transform: translateY(-15px) rotate(var(--r)); }
+
+    
 }

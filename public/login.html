@@ -16,14 +16,30 @@
     <div class="blob blob-red"></div>
     <div class="blob blob-green"></div>
     <div class="bar-clip"></div>
+   
 
 
-    <div class="moto-container">
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.0/build/spline-viewer.js"></script>
-        <spline-viewer url="https://prod.spline.design/QQ5QzlLFAcdQXuF9/scene.splinecode"></spline-viewer>
+   <!-- ================= POPUP DE LA MOTO ================= -->
+<div id="motoPopup" class="moto-popup-overlay">
+    <div class="moto-popup-content">
+        <button class="moto-close-btn" id="closeMotoPopup">×</button>
+
+        <div class="moto-container">
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.4/build/spline-viewer.js"></script>
+<spline-viewer url="https://prod.spline.design/QQ5QzlLFAcdQXuF9/scene.splinecode"></spline-viewer>>
+        </div>
     </div>
+</div>
+ <button type="button" class="btn-actionar btn-yellow " id="btnMotoPopup">
+    JUEGA Y DESCUBRE LUGARES NUEVOS
+</button>
+<div class="click-img">
+    <img src="img/mano.png" alt="">
+</div>
 
     <div class="main-scene">
+        
+
         <div class="card-wrapper" id="cardWrapper">
             
             <div class="card-face card-front">
@@ -101,6 +117,7 @@
             </div>
 
         </div>
+        
     </div>
      
 
@@ -109,6 +126,35 @@
             const card = document.getElementById('cardWrapper');
             card.classList.toggle('is-flipped');
         }
+
+      
+document.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("motoPopup");
+    const btnOpen = document.getElementById("btnMotoPopup");
+    const btnClose = document.getElementById("closeMotoPopup");
+
+    // Abrir popup
+    btnOpen.addEventListener("click", () => {
+        popup.classList.add("active");
+    });
+
+    // Cerrar popup
+    btnClose.addEventListener("click", () => {
+        popup.classList.remove("active");
+    });
+
+    // Cerrar haciendo click afuera
+    popup.addEventListener("click", e => {
+        if (e.target === popup) popup.classList.remove("active");
+    });
+
+    // Cerrar con ESC
+    document.addEventListener("keydown", e => {
+        if (e.key === "Escape") popup.classList.remove("active");
+    });
+});
+
+
     </script>
 </body>
 </html>
