@@ -84,6 +84,7 @@ body {
     transform: rotate(-140deg);
     top: 48%;
     left: 33%;
+    pointer-events: none;
     }
 
 /* Botón amarillo "Juega y descubre" */
@@ -138,31 +139,46 @@ body {
     filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.2));
 }
 
-/* ACTIVE (CLICK) ARREGLADO */
+
 .btn-yellow:active {
-    /* Al hacer click vuelve a su tamaño normal pero se hunde un poco */
+   
     transform: rotate(-20deg) scale(0.95) translateY(0);
     box-shadow: 0 2px 0 rgba(0,0,0,0.1);
     transition: 0.1s;
 }
 
-/* Mantener diseño interno de la moto */
+/* =======================================================
+   CORRECCIÓN PARA CLICS EN LA MOTO
+   ======================================================= */
+
+/* 1. Estado por defecto (Oculto): 
+   No permite clicks ni interacción con el Spline */
 .moto-popup-content .moto-container {
     width: 100%;
     height: 50%;
     clip-path: none;
     opacity: 1;
-    pointer-events: all;
-
+    
+    /* ESTO ES LO IMPORTANTE: Desactiva los clicks por defecto */
+    pointer-events: none; 
 }
 
+/* 2. Estado Activo (Visible):
+   Cuando el popup tiene la clase .active, reactivamos los clicks 
+   en el contenedor de la moto para poder girarla */
+.moto-popup-overlay.active .moto-popup-content .moto-container {
+    pointer-events: auto; /* O 'all', permite interactuar */
+}
+
+/* Ajuste del viewer */
 .moto-container spline-viewer {
     position: absolute;
     width: 100%;
     height: auto;
-   left: 0%;
-   right: 95%;
-
+    left: 0%;
+    right: 95%;
+    /* Aseguramos que el viewer herede el comportamiento del padre */
+    pointer-events: inherit; 
 }
 
 
